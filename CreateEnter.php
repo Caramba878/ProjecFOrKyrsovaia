@@ -17,5 +17,4 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-echo "<h3>Table created.</h3>";
 ?>
