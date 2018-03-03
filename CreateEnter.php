@@ -1,7 +1,8 @@
 <?php
 try {
-    $conn = new PDO("sqlsrv:server = tcp:vol1.database.windows.net,1433; Database = NewBD", "vol1", "Simpsons1");
+    $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
     
     $sql = "  CREATE TABLE `Enter` (
     id INT NOT NULL IDENTITY(1,1) 
