@@ -9,7 +9,7 @@ try {
 	`Login` VARCHAR(255) NOT NULL,
 	`Password` VARCHAR(255) NOT NULL,
 	`Number` TEXT(11) NOT NULL	
-);";
+)";
     $conn->query($sql);
 
 }
