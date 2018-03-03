@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="login">
-        <form action="Registration.php" method="post">
+        <form action="Registration.php" method="post" enctype="multipart/form-data" >
             <fieldset class="clearfix">
                 <p><input type="text" id = "login"  placeholder="Логин" required></p>
                 <p><input type="password" id = "password1"   placeholder="Пароль" required></p>
