@@ -9,11 +9,11 @@
     <div id="login">
         <form action="Registration.php" method="post" enctype="multipart/form-data" >
             <fieldset class="clearfix">
-                <p><input type="text" id = "login"  placeholder="Логин" required></p>
-                <p><input type="password" id = "password1"   placeholder="Пароль" required></p>
-                <p><input type="password" id = "password2"   placeholder="Повторить пароль" required></p>
-                <p><input type="text" id = "phone"   placeholder="Номер телефона" required  pattern="[78][0-9]{9}"></p>
-                <p><input type="submit" value="Зарегистрироваться"></p>
+                <p><input type="text" name = "login"  placeholder="Логин" required></p>
+                <p><input type="password" name = "password1"   placeholder="Пароль" required></p>
+                <p><input type="password" name = "password2"   placeholder="Повторить пароль" required></p>
+                <p><input type="text" name = "phone"   placeholder="Номер телефона" required  pattern="[78][0-9]{9}"></p>
+                <p><input type="submit" name = "submit" value="Зарегистрироваться"></p>
             </fieldset>
         </form>
     </div>
