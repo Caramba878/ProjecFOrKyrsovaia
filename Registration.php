@@ -25,14 +25,10 @@
 try {
      $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-	print("Error connecting to SQL Server.");
-	die(print_r($e));
-}
-
-
-sql_select = "SELECT * FROM Enter";
+	
+	
+	
+	sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
@@ -50,5 +46,17 @@ if(count($registrants) > 0) {
 } else {
     echo "<h3>No one is currently registered.</h3>";
 }
+	
+	
+	
+	
+	
+}
+catch (PDOException $e) {
+	print("Error connecting to SQL Server.");
+	die(print_r($e));
+}
+
+
 
 ?>
