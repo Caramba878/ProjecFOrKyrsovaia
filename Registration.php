@@ -29,4 +29,32 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
+
+
+try {
+    $login = $_POST['login'];
+    $pas1 = $_POST['password1'];
+    $pas2 = $_POST['password2'];
+$phone = $_POST['phone'];
+    // Insert data
+	if($pas1==$pas2)
+	{
+    $sql_insert = 
+"INSERT INTO Enter (Login, Password, Number) 
+                   VALUES (?,?,?)";
+    $stmt = $conn->prepare($sql_insert);
+    $stmt->bindValue(1, $login);
+    $stmt->bindValue(2, $pas1);
+    $stmt->bindValue(3, $phone);
+    $stmt->execute();
+echo "<h3>Your're registered!</h3>";
+}
+	else{echo "<h3>Passwords isn't equal</h3>"}
+}
+catch(Exception $e) {
+    die(var_dump($e));
+}
+} 
+
+
 ?>
