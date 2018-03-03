@@ -49,7 +49,6 @@ $phone = $_POST['phone'];
     $stmt->bindValue(2, $pas1);
     $stmt->bindValue(3, $phone);
     $stmt->execute();
-echo "<h3>Your're registered!</h3>";
 }
 catch(Exception $e) {
     die(var_dump($e));
