@@ -21,39 +21,6 @@
 </html>
 
 <?php
-try {
-     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-
-try {
-	
-if(isset($_POST["submit"])) {
-    $login = $_POST['login'];
-    $pas1 = $_POST['password1'];
-    $pas2 = $_POST['password2'];
-$phone = $_POST['phone'];
-    // Insert data
-	
-    $sql_insert = 
-"INSERT INTO Enter (Login, Password, Number) 
-                   VALUES (?,?,?)";
-    $stmt = $conn->prepare($sql_insert);
-    $stmt->bindValue(1, $login);
-    $stmt->bindValue(2, $pas1);
-    $stmt->bindValue(3, $phone);
-    $stmt->execute();
-echo "<h3>Your're registered!</h3>";
-}
-catch(Exception $e) {
-    die(var_dump($e));
-}
-}	
 
 
 ?>
