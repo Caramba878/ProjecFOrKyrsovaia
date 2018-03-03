@@ -26,13 +26,13 @@ try {
      $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
+//catch (PDOException $e) {
+ //   print("Error connecting to SQL Server.");
+ //   die(print_r($e));
+//}
 
 
-try {
+//try {
 	
 if(isset($_POST["submit"])) {
     $login = $_POST['login'];
@@ -49,9 +49,6 @@ $phone = $_POST['phone'];
     $stmt->bindValue(2, $pas1);
     $stmt->bindValue(3, $phone);
     $stmt->execute();
-}
-catch(Exception $e) {
-    die(var_dump($e));
 }
 }	
 sql_select = "SELECT * FROM Enter";
@@ -71,6 +68,9 @@ if(count($registrants) > 0) {
     echo "</table>";
 } else {
     echo "<h3>No one is currently registered.</h3>";
+}
+catch(Exception $e) {
+    die(var_dump($e));
 }
 
 ?>
