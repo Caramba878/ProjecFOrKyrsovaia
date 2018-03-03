@@ -37,8 +37,7 @@ try {
     $pas2 = $_POST['password2'];
 $phone = $_POST['phone'];
     // Insert data
-	if($pas1==$pas2)
-	{
+	
     $sql_insert = 
 "INSERT INTO Enter (Login, Password, Number) 
                    VALUES (?,?,?)";
@@ -49,12 +48,27 @@ $phone = $_POST['phone'];
     $stmt->execute();
 echo "<h3>Your're registered!</h3>";
 }
-	else{echo "<h3>Passwords isn't equal</h3>"}
-}
 catch(Exception $e) {
     die(var_dump($e));
 }
-} 
+sql_select = "SELECT * FROM Enter";
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) {
+    echo "<h2>People who are registered:</h2>";
+    echo "<table>";
+    echo "<tr><th>Login</th>";
+    echo "<th>Password</th>";
+    echo "<th>Number</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['Login']."</td>";
+        echo "<td>".$registrant['Password']."</td>";
+        echo "<td>".$registrant['Number']."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
 
 
 
