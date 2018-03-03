@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="login">
-        <form action="" method="get">
+        <form action="Registration.php" method="post">
             <fieldset class="clearfix">
                 <p><input type="text" id = "login"  placeholder="Логин" required></p>
                 <p><input type="password" id = "password1"   placeholder="Пароль" required></p>
@@ -32,6 +32,8 @@ catch (PDOException $e) {
 
 
 try {
+	
+if(isset($_POST["submit"])) {
     $login = $_POST['login'];
     $pas1 = $_POST['password1'];
     $pas2 = $_POST['password2'];
@@ -69,7 +71,7 @@ if(count($registrants) > 0) {
 } else {
     echo "<h3>No one is currently registered.</h3>";
 }
-
+}
 
 
 ?>
