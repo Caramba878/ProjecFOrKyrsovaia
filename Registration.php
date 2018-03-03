@@ -54,9 +54,7 @@ catch(Exception $e) {
     die(var_dump($e));
 }
 }	
-	
-
-	sql_select = "SELECT * FROM Enter";
+$sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
