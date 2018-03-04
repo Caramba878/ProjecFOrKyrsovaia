@@ -43,7 +43,7 @@ $phone = $_POST['phone'];
 	
 	
 	
-$sql_select = "SELECT * FROM Enter WHERE Login ='.$login.' ";
+$sql_select = "SELECT * FROM Key WHERE Login LIKE '%".$login."%'";
 $stmt = $conn->query($sql_select);
 $reg = $stmt->fetchAll(); 
 if(count($reg) > 0) {
