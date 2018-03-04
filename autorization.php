@@ -24,7 +24,7 @@
 try {
     conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql_select = "SELECT id FROM Enter where (name = '$log' And email = '$pass')";
+      $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
       $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
       if(count($registrants) > 0) {
