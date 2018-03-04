@@ -40,10 +40,18 @@ try {
     $pas1 = $_POST['password1'];
     $pas2 = $_POST['password2'];
 $phone = $_POST['phone'];
+	
+$result = $mysqli->query("SELECT * FROM Key WHERE Login LIKE '%".$login."%'");	
+	
     // Insert data
-	if($pas1!=$pas2)
+	
+if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
+	if ($result->num_rows > 0) {
+	echo "<h3>This login have already used</h3>"
+}
+		else{
     $sql_insert = 
 "INSERT INTO Enter (Login, Password, Number) 
                    VALUES (?,?,?)";
@@ -52,6 +60,7 @@ $phone = $_POST['phone'];
     $stmt->bindValue(2, $pas1);
     $stmt->bindValue(3, $phone);
     $stmt->execute();
+		}
 }
 }
 catch(Exception $e) {
