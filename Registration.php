@@ -14,6 +14,7 @@
                 <p><input type="password" name = "password2"   placeholder="Повторить пароль" required></p>
                 <p><input type="text" name = "phone"   placeholder="Номер телефона" required  pattern="[78][0-9]{9}"></p>
                 <p><input type="submit" name = "submit" value="Зарегистрироваться"></p>
+		    	<p><a href="index.php"> Вход в аккаунт </a></p>
             </fieldset>
         </form>
     </div>
