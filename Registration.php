@@ -86,7 +86,7 @@ $sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
-    echo "<h2>People who are registered:</h2>";
+    echo "<h2>ENTER</h2>";
     echo "<table>";
     echo "<tr><th>Login</th>";
     echo "<th>Password</th>";
@@ -105,7 +105,7 @@ $sql_select = "SELECT * FROM Klient";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
-    echo "<h2>People who are registered:</h2>";
+    echo "<h2>KLIENT</h2>";
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>SecondName</th>";
