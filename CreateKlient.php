@@ -2,11 +2,11 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE TABLE `Klient` (
-	`id` INT(30) NOT NULL AUTO_INCREMENT,
-	`Name` varchar(30) NOT NULL,
-	`SecondName` varchar(30) NOT NULL,
-	`Phone` TEXT NOT NULL,
+    $sql = "CREATE TABLE Klient (
+	id INT(30) NOT NULL AUTO_INCREMENT,
+	Name varchar(30) NOT NULL,
+	SecondName varchar(30) NOT NULL,
+	Phone TEXT NOT NULL,
 	PRIMARY KEY (`id`)
 );";
     $conn->query($sql);
