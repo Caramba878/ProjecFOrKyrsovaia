@@ -55,7 +55,7 @@ if($pas1!=$pas2)
 	else{
     $sql_insert = 
 "INSERT INTO Enter (Login, Password) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $login);
     $stmt->bindValue(2, $pas1);
