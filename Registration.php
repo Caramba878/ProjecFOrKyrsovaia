@@ -40,7 +40,8 @@ try {
     $pas2 = $_POST['password2'];
 $phone = $_POST['phone'];
     // Insert data
-	
+	if($pas1==$pas2)
+	{
     $sql_insert = 
 "INSERT INTO Enter (Login, Password, Number) 
                    VALUES (?,?,?)";
@@ -50,6 +51,8 @@ $phone = $_POST['phone'];
     $stmt->bindValue(3, $phone);
     $stmt->execute();
 }
+}
+	else{echo "<h3>Passwords isn't equal</h3>"}
 catch(Exception $e) {
     die(var_dump($e));
 }
