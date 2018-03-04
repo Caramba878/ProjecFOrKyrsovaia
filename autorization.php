@@ -49,11 +49,6 @@ exit;
     echo "<h3>Incorrect input data.</h3>";
 }
 }
-	
-	
-	
-	
-}
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
