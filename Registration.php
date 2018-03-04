@@ -54,12 +54,11 @@ if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
     $sql_insert = 
-"INSERT INTO Enter (Login, Password, Number) 
+"INSERT INTO Enter (Login, Password) 
                    VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $login);
     $stmt->bindValue(2, $pas1);
-    $stmt->bindValue(3, $phone);
     $stmt->execute();
 }
 }
@@ -80,7 +79,6 @@ if(count($registrants) > 0) {
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['Login']."</td>";
         echo "<td>".$registrant['Password']."</td>";
-        echo "<td>".$registrant['Number']."</td></tr>";
     }
     echo "</table>";
 } else {
