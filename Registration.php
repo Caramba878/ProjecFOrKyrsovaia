@@ -41,6 +41,15 @@ try {
     $pas2 = $_POST['password2'];
 $phone = $_POST['phone'];
 	
+	
+	
+$sql_select = "SELECT * FROM Enter WHERE login ='.$login.' ";
+$stmt = $conn->query($sql_select);
+$reg = $stmt->fetchAll(); 
+if(count($reg) > 0) {
+    echo "<h2>This login already exist</h2>";
+    }
+else{		
 if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
@@ -54,10 +63,11 @@ if($pas1!=$pas2)
     $stmt->execute();
 }
 }
+}
 catch(Exception $e) {
     die(var_dump($e));
 }
-}	
+}
 $sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
