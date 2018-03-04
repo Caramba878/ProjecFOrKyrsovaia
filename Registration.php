@@ -105,7 +105,7 @@ $sql_select = "SELECT * FROM Klient";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
-    echo "<h2>KLIENT</h2>";
+    echo "<br><h2>KLIENT</h2>";
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>SecondName</th>";
