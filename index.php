@@ -73,7 +73,7 @@ body{background:#2c3338;}
  <div class="panel-body">
  <div class="text-center" id="author">
 
- <h3><?php echo $_SESSION['log'];   ?></h3>
+ <h3><?php echo ".$_SESSION['log']";   ?></h3>
  <small class="label label-warning">Российская Федерация</small>
 
  </div>
