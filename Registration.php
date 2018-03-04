@@ -52,7 +52,7 @@ $phone = $_POST['phone'];
     $stmt->execute();
 }
 }
-	else{echo "<h3>Passwords isn't equal</h3>"}
+	else{echo "<h3>Passwords isn't equal</h3>";}
 catch(Exception $e) {
     die(var_dump($e));
 }
