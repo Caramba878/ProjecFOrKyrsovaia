@@ -1,6 +1,5 @@
 <?php
-session_start(); 
-echo ".$_SESSION['log']."; 
+
 ?> 
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
