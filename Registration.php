@@ -9,6 +9,8 @@
     <div id="login">
         <form action="Registration.php" method="post" enctype="multipart/form-data" >
             <fieldset class="clearfix">
+		    <p><input type="text" name = "name"  placeholder="Имя" required></p>
+		     <p><input type="text" name = "secondName"  placeholder="Фамилия" required></p>
                 <p><input type="text" name = "login"  placeholder="Логин" required></p>
                 <p><input type="password" name = "password1"   placeholder="Пароль" required></p>
                 <p><input type="password" name = "password2"   placeholder="Повторить пароль" required></p>
