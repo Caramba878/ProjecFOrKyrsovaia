@@ -41,10 +41,6 @@ try {
     $pas2 = $_POST['password2'];
 $phone = $_POST['phone'];
 	
-$result = $mysqli->query("SELECT * FROM Key WHERE Login LIKE '%".$login."%'");	
-	
-    // Insert data
-	
 if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
