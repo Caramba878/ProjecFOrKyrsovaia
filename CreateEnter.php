@@ -6,7 +6,7 @@ try {
     id INT NOT NULL IDENTITY(1,1) 
     PRIMARY KEY(id),
     Login VARCHAR(30) NOT NULL,
-    Password VARCHAR(30) NOT NULL,	
+    Pssword VARCHAR(30) NOT NULL	
 )";
     $conn->query($sql);
 }
