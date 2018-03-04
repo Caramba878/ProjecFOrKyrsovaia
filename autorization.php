@@ -11,7 +11,7 @@
             <fieldset class="clearfix">
                 <p><span class="fontawesome-user"></span><input type="text" name = "login"  placeholder="Логин" required></p>
                 <p><span class="fontawesome-lock"></span><input type="password" name = "pass"  placeholder="Пароль" required></p>
-		    <p><input type="submit" value="Войти"></p>
+		    <p><input type="submit" name = "submit" value="Войти"></p>
             </fieldset>
         </form>
         <p>Нет аккаунта? &nbsp;&nbsp;<a href="Registration.php">Регистрация</a><span class="fontawesome-arrow-right"></span></p>
