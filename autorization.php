@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="login">
-        <form action="" method="get">
+        <form action="autorization.php" method="post">
             <fieldset class="clearfix">
                 <p><span class="fontawesome-user"></span><input type="text" name = "login"  placeholder="Логин" required></p>
                 <p><span class="fontawesome-lock"></span><input type="password" name = "pass"  placeholder="Пароль" required></p>
