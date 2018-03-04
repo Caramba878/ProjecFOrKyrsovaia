@@ -30,6 +30,9 @@ try {
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
       if(count($registrants) > 0) {
+    echo "<h2>People who are authorization:</h2>";
+    echo "<table>";
+    echo "<tr><th>id</th></tr>";
 	      foreach($registrants as $registrant){
 session_start();
 $id = $registrant['id'];		      
@@ -39,6 +42,7 @@ $_SESSION['log'] = $log;
 		   header("Location: index.php");
 exit;
 	      }
+	        echo "</table>";
 } else {
     echo "<h3>Incorrect input data.</h3>";
 }
