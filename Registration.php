@@ -38,10 +38,12 @@ catch (PDOException $e) {
 
 if(isset($_POST["submit"])) {
 try {
+    $name = $_POST['name'];
+    $secondName = $_POST['secondName'];
     $login = $_POST['login'];
     $pas1 = $_POST['password1'];
     $pas2 = $_POST['password2'];
-$phone = $_POST['phone'];
+    $phone = $_POST['phone'];
 	
 	
 	
@@ -55,12 +57,23 @@ else{
 if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
-    $sql_insert = 
+		$sql_insert1 = 
+"INSERT INTO Klient (Name, SecondName,Phone) 
+                   VALUES (?,?,?)";
+    $stmt = $conn->prepare($sql_insert1);
+    $stmt->bindValue(1, $name);
+    $stmt->bindValue(2, $secondName);
+	$stmt->bindValue(3, $phone);
+    $stmt->execute();
+		
+		
+    $sql_insert2 = 
 "INSERT INTO Enter (Login, Password) 
                    VALUES (?,?)";
-    $stmt = $conn->prepare($sql_insert);
+    $stmt = $conn->prepare($sql_insert2);
     $stmt->bindValue(1, $login);
     $stmt->bindValue(2, $pas1);
+
     $stmt->execute();
 }
 }
@@ -77,7 +90,6 @@ if(count($registrants) > 0) {
     echo "<table>";
     echo "<tr><th>Login</th>";
     echo "<th>Password</th>";
-    echo "<th>Number</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['Login']."</td>";
         echo "<td>".$registrant['Password']."</td>";
@@ -86,5 +98,29 @@ if(count($registrants) > 0) {
 } else {
     echo "<h3>No one is currently registered.</h3>";
 }
+
+
+
+$sql_select = "SELECT * FROM Klient";
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) {
+    echo "<h2>People who are registered:</h2>";
+    echo "<table>";
+    echo "<tr><th>Name</th>";
+    echo "<th>SecondName</th>";
+    echo "<th>Number</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['Name']."</td>";
+        echo "<td>".$registrant['SecondName']."</td>";
+	      echo "<td>".$registrant['Phone']."</td>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
+
+
+
 
 ?>
