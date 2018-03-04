@@ -1,6 +1,4 @@
-<?php
 
-?> 
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
 <script src="http://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
@@ -75,7 +73,7 @@ body{background:#2c3338;}
  <div class="panel-body">
  <div class="text-center" id="author">
 
- <h3></h3>
+ <h3><?php echo $_SESSION['log'];   ?></h3>
  <small class="label label-warning">Российская Федерация</small>
 
  </div>
