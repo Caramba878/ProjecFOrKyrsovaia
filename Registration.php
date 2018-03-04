@@ -43,7 +43,7 @@ $phone = $_POST['phone'];
 	
 	
 	
-$sql_select = "SELECT * FROM Enter WHERE login ='.$login.' ";
+$sql_select = "SELECT * FROM Enter WHERE Login ='.$login.' ";
 $stmt = $conn->query($sql_select);
 $reg = $stmt->fetchAll(); 
 if(count($reg) > 0) {
