@@ -52,6 +52,7 @@ $phone = $_POST['phone'];
     $stmt->bindValue(3, $phone);
     $stmt->execute();
 }
+}
 catch(Exception $e) {
     die(var_dump($e));
 }
