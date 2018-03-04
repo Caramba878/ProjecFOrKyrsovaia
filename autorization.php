@@ -19,20 +19,14 @@
 </body>
 </html>
 <?php
+$log = $_POST['login'];
+	$pass = $_POST['pass'];
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);     
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-
-if(isset($_POST["submit"])){
-	$log = $_POST['login'];
-	$pass = $_POST['pass'];
-$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+	
+	
+	$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
       if(count($registrants) > 0) {
@@ -48,6 +42,19 @@ exit;
 } else {
     echo "<h3>Incorrect input data.</h3>";
 }
+
+	
+	
+	
+	
 }
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+
+	
+
 
 ?>
