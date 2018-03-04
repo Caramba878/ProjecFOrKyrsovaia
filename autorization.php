@@ -28,7 +28,7 @@ try {
 		 $log = $_POST['login'];
 	$pass = $_POST['pass'];
 	
-	$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
+	$sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
       if(count($registrants) > 0) {
