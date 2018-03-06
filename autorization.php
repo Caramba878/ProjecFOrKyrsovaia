@@ -38,16 +38,14 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
  $stmt = $conn->query($sql_select);
 	if ($stmt->fetchColumn() > 0){
 		$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
-			 $row = $conn->query($sql_select1);
-			$nam = $row->fetchAll()
-				foreach($nam as $registrant){
+			
 	session_start();
   	  $_SESSION['login'] = $log;
-		$_SESSION['name'] = $registrant["Name"];
+		//$_SESSION['name'] 
 		//$_SESSION['secondName']
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
-}	
+	
 }
 	else {echo "Ошибка";}
 }
