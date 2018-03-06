@@ -37,12 +37,12 @@ if (isset($_POST['submit'])) {
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
  $stmt = $conn->query($sql_select);
 	if ($stmt->fetchColumn() > 0){
+		$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
+			 $row = $conn->query($sql_select1);
+			$nam = $row->fetch(PDO::FETCH_ASSOC)
 	session_start();
   	  $_SESSION['login'] = $log;
-		
-		$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
-			 $nam = $conn->query($sql_select1);
-		$_SESSION['name'] = $nam;
+		$_SESSION['name'] = $nam["Name"];
 		//$_SESSION['secondName']
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
