@@ -41,7 +41,6 @@ $registrants = $stmt->fetchAll();
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
 		   header("Location: index.php");
-exit;
 }
 	        echo "</table>";
 } else {
