@@ -36,9 +36,7 @@ $registrants = $stmt->fetchAll();
     echo "<table>";
     echo "<tr><th>id</th></tr>";
 	      foreach($registrants as $registrant){
-        	$_SESSION['login'] = $log;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
+        	
 }
 }	        echo "</table>";
  else {
