@@ -31,8 +31,8 @@ try {
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
 $stmt = $pdo->query($sql);
 $row = $stmt->fetch();
-$password1 = $row['password'];
-$login1 = $row['login'];
+$password1 = $row['Password'];
+$login1 = $row['Login'];
 	if ($_POST['password'] == $password1){
 	
         
@@ -44,9 +44,7 @@ $login1 = $row['login'];
  else {
     echo "<h3>Incorrect input data.</h3>";
 }
-	
-	
-     
+    
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
