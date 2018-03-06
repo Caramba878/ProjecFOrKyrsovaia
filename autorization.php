@@ -29,7 +29,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
-$stmt = $pdo->query($sql);
+$stmt = $pdo->query($sql_select);
 $row = $stmt->fetch();
 $password1 = $row['Password'];
 $login1 = $row['Login'];
