@@ -30,8 +30,8 @@ try {
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
 $stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
-      if(count($registrants) > 0) {
+$data = $stmt->fetch(PDO::FETCH_ASSOC);
+      if($data == true) {
         
         	$_SESSION['login'] = $login;
   	  $_SESSION['success'] = "You are now logged in";
