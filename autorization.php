@@ -38,7 +38,8 @@ $registrants = $stmt->fetchAll();
     echo "<table>";
     echo "<tr><th>id</th></tr>";
 	      foreach($registrants as $registrant){
-		      $_SESSION['login'] =$registrant['login'];
+		      $log1 = $registrant['Login']
+		      $_SESSION['login'] =$log1;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
         	
