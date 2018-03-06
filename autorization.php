@@ -40,7 +40,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	session_start();
   	  $_SESSION['login'] = $log;
 		
-		$sql_select1 = "Select Name From Enter Join Klient On Enter.id = Klient.id Where Login = '$log'"
+		$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
 			 $nam = $conn->query($sql_select1);
 		$_SESSION['name'] = $nam;
 		//$_SESSION['secondName']
