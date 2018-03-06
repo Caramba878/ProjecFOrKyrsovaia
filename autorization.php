@@ -39,6 +39,8 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	if ($stmt->fetchColumn() > 0){
 	session_start();
   	  $_SESSION['login'] = $log;
+		//$_SESSION['name']
+		//$_SESSION['secondName']
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	
