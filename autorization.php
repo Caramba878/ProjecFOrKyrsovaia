@@ -41,7 +41,7 @@ $login1 = $row['login'];
   	  header('location: index.php');
 }
 	        echo "</table>";
-} else {
+ else {
     echo "<h3>Incorrect input data.</h3>";
 }
 	
