@@ -29,18 +29,18 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
-$stmt = $pdo->query($sql_select);
-$row = $stmt->fetch();
-$password1 = $row['Password'];
-$login1 = $row['Login'];
-	if ($_POST['pass'] == $password1){
-	
-        
+ $stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+      if(count($registrants) > 0) {
+    echo "<h2>People who are authorization:</h2>";
+    echo "<table>";
+    echo "<tr><th>id</th></tr>";
+	      foreach($registrants as $registrant){
         	$_SESSION['login'] = $login;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
 }
-	        echo "</table>";
+      }	        echo "</table>";
  else {
     echo "<h3>Incorrect input data.</h3>";
 }
