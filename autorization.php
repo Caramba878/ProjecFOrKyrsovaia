@@ -29,7 +29,8 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
-$stmt = $conn->query($sql_select);
+$stmt = $conn->prepare($sql_select);
+$stmt->execute();
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
       if($data == true) {
         
