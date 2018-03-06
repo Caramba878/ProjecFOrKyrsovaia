@@ -37,10 +37,10 @@ $registrants = $stmt->fetchAll();
     echo "<tr><th>id</th></tr>";
 	      foreach($registrants as $registrant){
 session_start();
-$id = $registrant['id'];		      
-$_SESSION['id'] = $id;  
-$_SESSION['log'] = $log; 
-        
+
+        	  $_SESSION['login'] = $login;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
 		   header("Location: index.php");
 exit;
 }
