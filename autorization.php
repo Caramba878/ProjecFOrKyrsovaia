@@ -32,11 +32,7 @@ $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass'
  $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
       if(count($registrants) > 0) {
-    echo "<h2>People who are authorization:</h2>";
-    echo "<table>";
-    echo "<tr><th>id</th></tr>";
-	      foreach($registrants as $registrant){
-        	
+    
 }
 }	        echo "</table>";
  else {
