@@ -4,6 +4,11 @@ if (!isset($_SESSION['login'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: autorization.php');
   }
+if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['login']);
+  	header("location: autorization.php");
+  }
 
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
