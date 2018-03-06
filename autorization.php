@@ -38,7 +38,7 @@ catch (PDOException $e) {
 if (isset($_POST['submit'])) {
 	$log = $_POST['login'];
 	$pass = $_POST['pass'];
-$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
+$sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
  $results = mysqli_query($db, $sql_select);
 if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['login'] = $log;
