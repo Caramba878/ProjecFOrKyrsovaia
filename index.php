@@ -80,8 +80,10 @@ body{background:#2c3338;}
  <div class="panel-body">
  <div class="text-center" id="author">
 
- <h3></h3>
- <small class="label label-warning">Российская Федерация</small>
+ <?php  if (isset($_SESSION['login'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['login']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>
 
  </div>
  </div>
