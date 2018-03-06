@@ -29,10 +29,10 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
-$stmt = $conn->prepare($sql_select);
-$stmt->execute();
-$registrants = $stmt->fetchColumn(); 
-      if($registrants > 0) {
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+      if(count($registrants) > 0) {
+        
         	$_SESSION['login'] = $login;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
