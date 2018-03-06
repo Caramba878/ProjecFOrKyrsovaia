@@ -33,7 +33,7 @@ $stmt = $pdo->query($sql);
 $row = $stmt->fetch();
 $password1 = $row['Password'];
 $login1 = $row['Login'];
-	if ($_POST['password'] == $password1){
+	if ($_POST['pass'] == $password1){
 	
         
         	$_SESSION['login'] = $login;
