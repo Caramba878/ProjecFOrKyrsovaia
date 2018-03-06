@@ -36,16 +36,14 @@ if (isset($_POST['submit'])) {
 
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
  $stmt = $conn->query($sql_select);
-$row =  $stmt->fetch();
-$password1 = $row['Password'];
-$login1 = $row['Login'];
-if ($_POST['password'] == $password1)
+	if ($stmt->fetchColumn() > 0){
+
   	  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
-  	}else {
-  		echo "Ошибка";
-  	}
+  	
+}
+	else {echo "Ошибка";}
 }
  
 
