@@ -33,10 +33,6 @@ $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass'
  $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
  
-		
-		      $_SESSION['login'] =$log1;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
 
 	
 	
