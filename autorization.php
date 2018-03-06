@@ -19,12 +19,6 @@
 </body>
 </html>
 <?php
-
-		 $log = $_POST['login'];
-	$pass = $_POST['pass'];
-
-$db = sqlsrv_connect('vol2.database.windows.net','BD','Volun', 'Simpsons1');
-
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
@@ -38,10 +32,14 @@ catch (PDOException $e) {
 if (isset($_POST['submit'])) {
 	$log = $_POST['login'];
 	$pass = $_POST['pass'];
+	
+
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
- $results = sqlsrv_query($db, $sql_select);
-if (sqlsrv_num_rows($results) == 1) {
-	echo "123";
+ $stmt = $conn->query($sql_select);
+$row =  $stmt->fetch();
+$password1 = $row['Password'];
+$login1 = $row['Login'];
+if ($_POST['password'] == $password1)
   	  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
