@@ -31,8 +31,8 @@ try {
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
 $stmt = $conn->prepare($sql_select);
 $stmt->execute();
-$registrants = $stmt->fetchAll(); 
-      if(count($registrants) > 0) {
+$registrants = $stmt->fetchColumn(); 
+      if($registrants > 0) {
         	$_SESSION['login'] = $login;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
