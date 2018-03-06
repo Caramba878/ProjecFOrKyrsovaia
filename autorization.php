@@ -28,26 +28,27 @@ $db = mysqli_connect(' tcp:vol2.database.windows.net', 'BD', 'Volun', 'Simpsons1
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-	
-$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
- $results = mysqli_query($db, $sql_select);
-if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
-  	}else {
-  		echo "Ошибка";
-  	}
- 
-
-	
-	
+		
     
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
+if (isset($_POST['submit'])) {
+	$log = $_POST['login'];
+	$pass = $_POST['pass'];
+$sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
+ $results = mysqli_query($db, $sql_select);
+if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['login'] = $log;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
+  	}else {
+  		echo "Ошибка";
+  	}
+}
+ 
 
 
 	
