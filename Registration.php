@@ -24,7 +24,7 @@
 </html>
 
 <?php
-
+session_start();
 try {
      $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -75,6 +75,11 @@ if($pas1!=$pas2)
     $stmt->bindValue(2, $pas1);
 
     $stmt->execute();
+		
+	$_SESSION['login'] = $login;
+  	$_SESSION['success'] = "You are now logged in";
+  	header('location: index.php');	
+		
 }
 }
 }
