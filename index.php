@@ -107,8 +107,8 @@ body{background:#2c3338;}
  <h4>История профиля</h4>
  <table class="table table-th-block">
  <tbody>
- <tr><td class="active" id = "field">Имя</td><td>123 </td></tr>
- <tr><td class="active" id = "field">Фамилия</td><td> 123</td></tr>
+ <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
+ <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
 
 
  </table>
