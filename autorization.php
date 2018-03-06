@@ -39,8 +39,8 @@ if (isset($_POST['submit'])) {
 	$log = $_POST['login'];
 	$pass = $_POST['pass'];
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
- $results = mysqli_query($db, $sql_select);
-if (mysqli_num_rows($results) == 1) {
+ $results = sqlsrv_query($db, $sql_select);
+if (sqlsrv_num_rows($results) == 1) {
 	echo "123";
   	  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
