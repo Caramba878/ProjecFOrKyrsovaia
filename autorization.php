@@ -39,7 +39,10 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	if ($stmt->fetchColumn() > 0){
 	session_start();
   	  $_SESSION['login'] = $log;
-		//$_SESSION['name']
+		
+		$sql_select1 = "Select Name From Enter Join Klient On Enter.id = Klient.id Where login = '$log'"
+			 $nam = $conn->query($sql_select1);
+		$_SESSION['name'] = $nam;
 		//$_SESSION['secondName']
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
