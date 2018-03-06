@@ -23,7 +23,7 @@
 		 $log = $_POST['login'];
 	$pass = $_POST['pass'];
 
-$db = mysqli_connect('tcp:vol2.database.windows.net', 'Volun', 'Simpsons1', 'BD');
+$db = mysqli_connect('Volun@vol2', 'Volun', 'Simpsons1', 'BD');
 
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
