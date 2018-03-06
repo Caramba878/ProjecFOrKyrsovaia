@@ -30,8 +30,14 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
- $stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
+ $results = mysqli_query($db, $sql_select);
+if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['username'] = $username;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
+  	}else {
+  		echo "Ошибка";
+  	}
  
 
 	
