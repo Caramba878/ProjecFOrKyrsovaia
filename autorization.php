@@ -29,9 +29,23 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	
 $sql_select = "SELECT id FROM Enter where (Login = '$log' And Password = '$pass')";
-$stmt = $conn->prepare($sql_select);
-$stmt->execute();
-$data = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $pdo->query($sql);
+$row = $stmt->fetch();
+$password1 = $row['password'];
+$login1 = $row['login'];
+	if ($_POST['password'] == $password1){
+	
+        
+        	$_SESSION['login'] = $login;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
+}
+	        echo "</table>";
+} else {
+    echo "<h3>Incorrect input data.</h3>";
+}
+	
+	
      
 }
 catch (PDOException $e) {
