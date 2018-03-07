@@ -43,7 +43,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
  	$n = $conn->query($sql_select1);
 		$row = $n->fetchAll()
 		foreach ($row as $rows) {
-		$_SESSION['name'] = $rows['Name'];
+		$_SESSION['name'] = $rows['name'];
 		$_SESSION['secondName'] = "123";
 		  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
