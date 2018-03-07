@@ -51,6 +51,11 @@ try {
 $sql_select = "SELECT * FROM Enter WHERE Login LIKE '%".$login."%'";
 $stmt = $conn->query($sql_select);
 $reg = $stmt->fetchAll(); 
+	
+$sql_select0 = "SELECT * FROM Enter WHERE Number LIKE '%".$phone."%'";
+$st = $conn->query($sql_select0);
+$ph = $stmt->fetchAll(); 	
+	
 if(count($reg) > 0) {
     echo "<h2>This login already exist</h2>";
     }
@@ -58,6 +63,9 @@ else{
 if($pas1!=$pas2)
 	echo "<h3>Passwords isn't equal</h3>";
 	else{
+		if(count($ph) > 0)
+			echo "<h2>This phone already exist</h2>";
+		else{
 		$sql_insert1 = 
 "INSERT INTO Klient (Name, SecondName,Phone) 
                    VALUES (?,?,?)";
@@ -81,6 +89,7 @@ if($pas1!=$pas2)
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');	
 		
+}
 }
 }
 }
