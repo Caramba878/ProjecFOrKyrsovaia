@@ -27,7 +27,7 @@
 <?php
 session_start();
 try {
-     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
+     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD","charset=utf8", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	
