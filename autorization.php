@@ -41,8 +41,8 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 			session_start();
 	//$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
  	//$n = $conn->query($sql_select1);
-		$_SESSION['name'] = 123;
-		$_SESSION['secondName'] = 123';
+		$_SESSION['name'] = "123";
+		$_SESSION['secondName'] = "123";
 		  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
