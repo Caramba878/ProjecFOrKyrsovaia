@@ -59,11 +59,9 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	}
 }
 	else {echo "Ошибка";}
-}
 	
 	
 	
-
 
 	
 
