@@ -37,10 +37,12 @@ if (isset($_POST['submit'])) {
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
  $stmt = $conn->query($sql_select);
 	
-	if ($stmt->fetchColumn() > 0){
-			session_start();
 	$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
  	$n = $conn->query($sql_select1);
+	
+	if ($stmt->fetchColumn() > 0){
+		
+		session_start();
 		$row = $n->fetchAll()
 		foreach ($row as $rows) {
 		$_SESSION['name'] = $rows['name'];
