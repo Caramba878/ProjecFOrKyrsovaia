@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 	<title>Банк</title>
 	<link rel="stylesheet" href="style2.css" media="screen" type="text/css" />
