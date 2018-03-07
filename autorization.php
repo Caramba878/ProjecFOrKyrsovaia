@@ -22,10 +22,17 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-	
-	
-	
-	if (isset($_POST['submit'])) {
+
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+ 
+
+
+
+if (isset($_POST['submit'])) {
 	$log = $_POST['login'];
 	$pass = $_POST['pass'];
 	
@@ -52,17 +59,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	
 	
 	
-	
-	
-	
-		
-    
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
- 
+
 
 	
 
