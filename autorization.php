@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')";
  $stmt = $conn->query($sql_select);
 		
-			$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
+			$sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'";
  	$n = $conn->query($sql_select1);
 		$row = $n->fetchAll()
 	
