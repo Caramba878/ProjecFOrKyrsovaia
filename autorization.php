@@ -43,11 +43,12 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
  	$n = $conn->query($sql_select1);
 		foreach ($n as $row) {
 		$_SESSION['name'] = $row["Name"];
-		}
+		
 		$_SESSION['secondName'] = "123";
 		  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
+		}
 }
 	else {echo "Ошибка";}
 }
