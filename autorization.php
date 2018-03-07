@@ -47,7 +47,6 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
-		}
 }
 	else {echo "Ошибка";}
 }
