@@ -8,7 +8,7 @@ try {
     $sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'"
  	$n = $conn->query($sql_select1);
 		$row = $n->fetchAll()
-    echo 123;
+    echo "123";
     
     
     
