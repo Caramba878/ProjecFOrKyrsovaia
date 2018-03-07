@@ -5,10 +5,11 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     
     
-    $sql_select1 = "Select Name From Klient Join Enter On Klient.id = Enter.id Where Login = 'BBB'";
+    $sql_select1 = "Select Name,secondName From Klient Join Enter On Klient.id = Enter.id Where Login = 'BBB'";
  	$n = $conn->query($sql_select1);
 		    foreach ($n as $row) {
     echo $row["Name"];
+	echo $row["secondName"];		    
     
 		    }
     
