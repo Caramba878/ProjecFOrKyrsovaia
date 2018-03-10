@@ -1,4 +1,9 @@
 <?php  
+if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
+ {     echo "сообщение успешно отправлено"; 
+} else { 
+    echo "при отправке сообщения возникли ошибки";
+}
 session_start(); 
 if (!isset($_SESSION['login'])) {
   	$_SESSION['msg'] = "You must log in first";
@@ -9,13 +14,6 @@ if (isset($_GET['logout'])) {
   	unset($_SESSION['login']);
   	header("location: autorization.php");
   }
-
-
-if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
- {     echo "сообщение успешно отправлено"; 
-} else { 
-    echo "при отправке сообщения возникли ошибки";
-}
 
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
