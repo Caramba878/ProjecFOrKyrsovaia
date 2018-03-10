@@ -15,7 +15,7 @@ if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio
  {     echo "сообщение успешно отправлено"; 
 } else { 
     echo "при отправке сообщения возникли ошибки";
-}?>
+}
 
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
