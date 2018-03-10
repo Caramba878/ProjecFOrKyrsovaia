@@ -118,7 +118,7 @@ body{background:#2c3338;}
  <form role="form">
  <div class="form-group">
  <label>Ваша карта</label>
- <input type="text" class="form-control rounded" placeholder="Укажите Ваше Имя" value = "">
+ <input type="text" class="form-control rounded" placeholder="" value = "">
  </div>
  <div class="form-group">
  <label>Карта получателя</label>
