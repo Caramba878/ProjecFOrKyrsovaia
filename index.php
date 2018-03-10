@@ -10,6 +10,9 @@ if (isset($_GET['logout'])) {
   	header("location: autorization.php");
   }
 
+
+mail("samoilenko-1998@mail.ru", "Загаловок", "Текст письма \n 1-ая строчка \n 2-ая строчка \n 3-ая строчка");
+
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
