@@ -117,12 +117,16 @@ body{background:#2c3338;}
  <p></p>
  <form role="form">
  <div class="form-group">
- <label>Ваше имя</label>
- <input type="text" class="form-control rounded" placeholder="Укажите Ваше Имя">
+ <label>Ваша карта</label>
+ <input type="text" class="form-control rounded" placeholder="Укажите Ваше Имя" value = "">
  </div>
  <div class="form-group">
- <label>Ваш телефон</label>
- <input type="text" class="form-control rounded" placeholder="(+7)(095)123456">
+ <label>Карта получателя</label>
+ <input type="text" class="form-control rounded">
+ </div>
+  <div class="form-group">
+ <label>Сумма</label>
+ <input type="text" class="form-control rounded">
  </div>
  <div class="form-group">
  <label>E-mail адрес</label>
@@ -130,15 +134,7 @@ body{background:#2c3338;}
  </div>
  <div class="form-group">
  <div class="checkbox">
- <label>
- <input type="checkbox"> Согласен с условиями
- </label>
  </div>
- </div>
- <div class="form-group">
- <label>Текст Вашего сообщения</label>
- <textarea class="form-control rounded" style="height: 100px;"></textarea>
- <p class="help-block">Текст сообщения будет отправлен пользователю</p>
  </div>
  <div class="form-group">
  <button type="submit" class="btn btn-success" data-original-title="" title="">Отправить</button>
