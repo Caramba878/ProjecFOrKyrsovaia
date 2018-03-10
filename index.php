@@ -118,11 +118,11 @@ body{background:#2c3338;}
  <form role="form">
  <div class="form-group">
  <label>Ваша карта</label>
- <input type="text" class="form-control rounded" placeholder="" value = "">
+ <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100." value = "">
  </div>
  <div class="form-group">
  <label>Карта получателя</label>
- <input type="text" class="form-control rounded">
+ <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100.">
  </div>
   <div class="form-group">
  <label>Сумма</label>
