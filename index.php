@@ -11,7 +11,11 @@ if (isset($_GET['logout'])) {
   }
 
 
-mail("samoilenko-1998@mail.ru", "Загаловок", "Текст письма \n 1-ая строчка \n 2-ая строчка \n 3-ая строчка");
+if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
+ {     echo "сообщение успешно отправлено"; 
+} else { 
+    echo "при отправке сообщения возникли ошибки";
+}?>
 
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
