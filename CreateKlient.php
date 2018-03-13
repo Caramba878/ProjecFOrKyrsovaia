@@ -5,9 +5,9 @@ try {
     $sql = "CREATE TABLE Klient (
 	id INT NOT NULL IDENTITY(1,1)
 	PRIMARY KEY (id),
-	Name varchar(30) NOT NULL,
-	SecondName varchar(30) NOT NULL,
-	Phone VARCHAR(11) NOT NULL
+	Name varchar(30),
+	SecondName varchar(30,
+	Phone TEXT(11)
 )";
     $conn->query($sql);
 }
