@@ -50,11 +50,11 @@ try {
 	
 $sql_select = "SELECT * FROM Enter WHERE Login LIKE '%".$login."%'";
 $stmt = $conn->query($sql_select);
-$reg = $stmt->fetch(); 
+$reg = $stmt->fetchAll(); 
 	
-$sql_select0 = "SELECT * FROM Klient WHERE Phone LIKE'%".$phone."%'";
+$sql_select0 = "SELECT * FROM Klient WHERE Phone ='$phone'";
 $st = $conn->query($sql_select0);
-$ph = $stmt->fetch(); 	
+$ph = $stmt->fetchAll(); 	
 	
 if(count($reg) > 0) {
     echo "<h2>This login already exist</h2>";
