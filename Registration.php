@@ -99,7 +99,7 @@ catch(Exception $e) {
 }
 $sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
+$registrants = $stmt->fetch(); 
 if(count($registrants) > 0) {
     echo "<h2>ENTER</h2>";
     echo "<table>";
