@@ -5,8 +5,8 @@ try {
     $sql = "CREATE TABLE Enter (
     id INT NOT NULL IDENTITY(1,1) 
     PRIMARY KEY(id),
-    Login VARCHAR(30) NOT NULL,
-    Password VARCHAR(30) NOT NULL	
+    Login VARCHAR(30),
+    Password VARCHAR(30)
 )";
     $conn->query($sql);
 }
