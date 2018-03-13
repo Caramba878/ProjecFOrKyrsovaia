@@ -7,7 +7,7 @@ try {
 	PRIMARY KEY (id),
 	Name varchar(30),
 	SecondName varchar(30),
-	Phone TEXT
+	Phone VARCHAR(11)
 )";
     $conn->query($sql);
 }
