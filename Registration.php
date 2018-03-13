@@ -118,7 +118,7 @@ if(count($registrants) > 0) {
 
 $sql_select = "SELECT * FROM Klient";
 $stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
+$registrants = $stmt->fetch(); 
 if(count($registrants) > 0) {
     echo "<br><h2>KLIENT</h2>";
     echo "<table>";
