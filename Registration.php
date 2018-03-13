@@ -54,7 +54,7 @@ $reg = $stmt->fetchAll();
 	
 $sql_select0 = "SELECT * FROM Klient WHERE Phone LIKE '%".$phone."%'";
 $st = $conn->query($sql_select0);
-$ph = $stmt->fetchAll(); 	
+$ph = $st->fetchAll(); 	
 	
 if(count($reg) > 0) {
     echo "<h2>This login already exist</h2>";
