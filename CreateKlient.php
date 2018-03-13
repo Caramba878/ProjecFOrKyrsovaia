@@ -5,10 +5,10 @@ try {
 	
     $sql = "CREATE TABLE Klient (
 	id INT NOT NULL IDENTITY(1,1)
+	PRIMARY KEY (id),
 	Name varchar(30),
 	SecondName varchar(30),
 	Phone TEXT NOT NULL,
-	PRIMARY KEY (id)
 )";
     $conn->query($sql);
 }
