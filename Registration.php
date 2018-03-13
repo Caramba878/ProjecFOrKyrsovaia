@@ -117,4 +117,24 @@ if(count($registrants) > 0) {
 
 
 
+$sql_select = "SELECT * FROM Klient";
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) {
+    echo "<br><h2>KLIENT</h2>";
+    echo "<table>";
+    echo "<tr><th>Name</th>";
+    echo "<th>SecondName</th>";
+    echo "<th>Number</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['Name']."</td>";
+        echo "<td>".$registrant['SecondName']."</td>";
+	      echo "<td>".$registrant['Phone']."</td>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
+
+
 ?>
