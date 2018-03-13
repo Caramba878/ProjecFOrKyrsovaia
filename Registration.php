@@ -69,21 +69,21 @@ if($pas1!=$pas2)
 		$sql_insert1 = 
 "INSERT INTO Klient (Name, SecondName,Phone) 
                    VALUES (?,?,?)";
-    $stmt = $conn->prepare($sql_insert1);
-    $stmt->bindValue(1, $name);
-    $stmt->bindValue(2, $secondName);
-	$stmt->bindValue(3, $phone);
-    $stmt->execute();
+    $stmt1 = $conn->prepare($sql_insert1);
+    $stmt1->bindValue(1, $name);
+    $stmt1->bindValue(2, $secondName);
+	$stmt1->bindValue(3, $phone);
+    $stmt1->execute();
 		
 		
     $sql_insert2 = 
 "INSERT INTO Enter (Login, Password) 
                    VALUES (?,?)";
-    $stmt = $conn->prepare($sql_insert2);
-    $stmt->bindValue(1, $login);
-    $stmt->bindValue(2, $pas1);
+    $stmt2 = $conn->prepare($sql_insert2);
+    $stmt2->bindValue(1, $login);
+    $stmt2->bindValue(2, $pas1);
 
-    $stmt->execute();
+    $stmt2->execute();
 		
 	$_SESSION['login'] = $login;
   	$_SESSION['success'] = "You are now logged in";
