@@ -99,7 +99,7 @@ catch(Exception $e) {
 }
 $sql_select = "SELECT * FROM Enter";
 $stmt = $conn->query($sql_select);
-$registrants = $stmt->fetch(); 
+$registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
     echo "<h2>ENTER</h2>";
     echo "<table>";
@@ -116,10 +116,10 @@ if(count($registrants) > 0) {
 
 
 
-$sql_select = "SELECT * FROM Klient";
-$stmt = $conn->query($sql_select);
-$registrants = $stmt->fetch(); 
-if(count($registrants) > 0) {
+$sql_select1 = "SELECT * FROM Klient";
+$stmt1 = $conn->query($sql_select1);
+$registrants1 = $stmt1->fetchAll(); 
+if(count($registrants1) > 0) {
     echo "<br><h2>KLIENT</h2>";
     echo "<table>";
     echo "<tr><th>Name</th>";
