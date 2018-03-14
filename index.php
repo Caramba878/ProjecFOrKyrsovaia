@@ -131,7 +131,7 @@ body{background:#2c3338;}
  </div>
   <div class="form-group">
  <label>Операция</label>
-  <select>
+  <select style = font-color: black;">
   <option>Выписка</option>
   <option>Перевести деньги</option>
      <option>Баланс</option>
