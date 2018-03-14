@@ -117,6 +117,13 @@ body{background:#2c3338;}
  <tbody>
  <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
+   <label>Ваша карта</label>
+   <font color = "black">
+  <select>
+   <option>4276 1234 5678 9100.</option>
+  <option>4376 1234 5678 9100.</option>
+     <option>4476 1234 5678 9100.</option>
+</select> </font>
 
 
  </table>
@@ -125,13 +132,6 @@ body{background:#2c3338;}
  <p></p>
  <form role="form">
  <div class="form-group">
- <label>Ваша карта</label>
-   <font color = "black">
-  <select>
-   <option>4276 1234 5678 9100.</option>
-  <option>4376 1234 5678 9100.</option>
-     <option>4476 1234 5678 9100.</option>
-</select> </font>
  </div>
  <div class="form-group">
  <label>Карта получателя</label>
