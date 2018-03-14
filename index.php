@@ -104,7 +104,7 @@ body{background:#2c3338;}
  <div class="panel-body">
  <ul id="myTab" class="nav nav-pills">
  <li class="active"><a href="#detail" data-toggle="tab" id = "about">О пользователе</a></li>
- <li class=""><a href="#contact" data-toggle="tab" id = "about">Отправить сообщение</a></li>
+ <li class=""><a href="#contact" data-toggle="tab" id = "about">Операция</a></li>
  </ul>
  <div id="myTabContent" class="tab-content">
 <hr>
