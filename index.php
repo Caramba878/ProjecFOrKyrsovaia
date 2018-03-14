@@ -126,7 +126,12 @@ body{background:#2c3338;}
  <form role="form">
  <div class="form-group">
  <label>Ваша карта</label>
- <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100." value = "">
+   <font color = "black">
+  <select>
+   <option>4276 1234 5678 9100.</option>
+  <option>4376 1234 5678 9100.</option>
+     <option>4476 1234 5678 9100.</option>
+</select> </font>
  </div>
  <div class="form-group">
  <label>Карта получателя</label>
