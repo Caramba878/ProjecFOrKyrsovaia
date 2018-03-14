@@ -131,12 +131,6 @@ body{background:#2c3338;}
  <div class="tab-pane fade" id="contact">
  <p></p>
  <form role="form">
- <div class="form-group">
- </div>
- <div class="form-group">
- <label>Карта получателя</label>
- <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100.">
- </div>
   <div class="form-group">
  <label>Операция</label>
    <font color = "black">
@@ -146,6 +140,10 @@ body{background:#2c3338;}
      <option>Баланс</option>
 </select> </font>
 </div>
+ <div class="form-group">
+ <label>Карта получателя</label>
+ <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100.">
+ </div>
   <div class="form-group">
  <label>Сумма</label>
  <input type="text" class="form-control rounded">
