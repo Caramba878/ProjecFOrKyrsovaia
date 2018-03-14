@@ -129,7 +129,7 @@ body{background:#2c3338;}
  <label>Карта получателя</label>
  <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100.">
  </div>
-  div class="form-group">
+  <div class="form-group">
  <label>Операция</label>
   <select>
   <option>Выписка</option>
