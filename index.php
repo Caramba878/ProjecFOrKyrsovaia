@@ -139,7 +139,7 @@ body{background:#2c3338;}
    <option>Выписка</option>
   <option>Перевести деньги</option>
      <option>Баланс</option>
-</select>  </font>
+</select> </font>
 </div>
   <div class="form-group">
  <label>Сумма</label>
