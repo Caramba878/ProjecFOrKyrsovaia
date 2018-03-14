@@ -71,7 +71,10 @@ body{background:#2c3338;}
 {
   background:#ea4c88;
 }
-
+#otio
+ {
+  font-color: black;
+ }
 </style>
 
 <div class="container">
@@ -131,7 +134,7 @@ body{background:#2c3338;}
  </div>
   <div class="form-group">
  <label>Операция</label>
-  <select style = "font-color: black;">
+  <select id = "optio">
   <option>Выписка</option>
   <option>Перевести деньги</option>
      <option>Баланс</option>
