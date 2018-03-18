@@ -14,6 +14,13 @@ if (isset($_GET['logout'])) {
   	unset($_SESSION['login']);
   	header("location: autorization.php");
   }
+
+	$sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '$_SESSION['phone']'";
+ 	$k= $conn->query($sql_select2);
+foreach ($k as $row) {
+$phone = $row["Ncard"];
+                     }
+
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
@@ -119,9 +126,7 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option>4276 1234 5678 9100.</option>
-  <option>4376 1234 5678 9100.</option>
-     <option>4476 1234 5678 9100.</option>
+   <option><?php echo $phone; ?></option> 
 </select> </font>
 
 
