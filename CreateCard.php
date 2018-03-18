@@ -5,7 +5,7 @@ try {
 	
   $sql = "CREATE TABLE Card (
 	Ncard varchar(18) NOT NULL,
-	Balance INT(30) NOT NULL,
+	Balance INT NOT NULL,
 	Phone varchar(11) NOT NULL,
 	PRIMARY KEY (Ncard)
 )";
