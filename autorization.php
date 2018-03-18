@@ -51,7 +51,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		    foreach ($n as $row) {
 		session_start();
 		$_SESSION['name'] = $row["Name"];
-		$_SESSION['secondName'] = $row["secondName"];
+		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
