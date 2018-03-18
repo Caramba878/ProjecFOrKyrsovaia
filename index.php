@@ -4,12 +4,7 @@ try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     
-    
-    $sql_select2 = "Select Ncard From Ncard Join Klient On Klient.Phone = Enter.Phone Where Phone = ".$_SESSION['phone'].";
- 	$k = $conn->query($sql_select1);
-    foreach ($k as $row) {
-	$ncard = $row["Ncard"];
-		}
+  
     
     
 }
