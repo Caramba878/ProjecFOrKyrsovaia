@@ -9,11 +9,6 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
- {     echo "сообщение успешно отправлено"; 
-} else { 
-    echo "при отправке сообщения возникли ошибки";
-}
 session_start(); 
 if (!isset($_SESSION['login'])) {
   	$_SESSION['msg'] = "You must log in first";
@@ -131,17 +126,13 @@ body{background:#2c3338;}
   <select>
    <option><?php
 	   
-	     $sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '$_SESSION['phone']'";
- 	$k = $conn->query($sql_select2);
-    foreach ($k as $row) {
-	$ncard = $row['Ncard'];
-	}
+	
 	   
 	   
 	   
 	   
 	   
-	   echo $ncard; ?></option> 
+	   echo $_SESSION['phone']; ?></option> 
 </select> </font>
 
 
