@@ -67,12 +67,13 @@ if($pas1!=$pas2)
 			echo "<h2>This phone already exist</h2>";
 		else{
 		$sql_insert1 = 
-"INSERT INTO Klient (Name, SecondName,Phone) 
+"INSERT INTO Klient (Name, SecondName,Phone,Login) 
                    VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_insert1);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $secondName);
 	$stmt->bindValue(3, $phone);
+			$stmt->bindValue(4, $login);
     $stmt->execute();
 		
 		
@@ -121,11 +122,13 @@ if(count($registrants) > 0) {
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>SecondName</th>";
-    echo "<th>Number</th></tr>";
+    echo "<th>Number</th>";
+	 echo "<th>Login</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['Name']."</td>";
         echo "<td>".$registrant['SecondName']."</td>";
 	      echo "<td>".$registrant['Phone']."</td>";
+	    echo "<td>".$registrant['Login']."</td>";
     }
     echo "</table>";
 } else {
