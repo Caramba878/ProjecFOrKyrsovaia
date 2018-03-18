@@ -126,12 +126,7 @@ body{background:#2c3338;}
   <select>
    <option><?php
 	   
-	
-	$sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '89999999990'";
- 	$k = $conn->query($sql_select2);
-    foreach ($k as $row) {
-	$ncard = $row['Ncard'];
-	}
+
 	   
 	   
 	   
