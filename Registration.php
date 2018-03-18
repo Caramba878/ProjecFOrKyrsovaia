@@ -135,4 +135,30 @@ if(count($registrants) > 0) {
 }
 
 
+
+
+$sql_select = "SELECT * FROM Card";
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) {
+    echo "<br><h2>Card</h2>";
+    echo "<table>";
+    echo "<tr><th>Ncard</th>";
+    echo "<th>Balance</th>";
+    echo "<th>Phone</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['Ncard']."</td>";
+        echo "<td>".$registrant['Balance']."</td>";
+	      echo "<td>".$registrant['Phone']."</td>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
+
+
+
+
+
+
 ?>
