@@ -55,16 +55,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$_SESSION['name'] = $row["Name"];
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
-			     $phone = $row["Phone"];
-			    
-			    
-        $sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = ".$phone.";
- 	$k= $conn->query($sql_select2);
-			foreach ($k as $row) {
- $_SESSION['Ncard'] = $row["Ncard"];}
-			    
-			    
-			    
+			     $phone = $row["Phone"];	    
 			    
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
