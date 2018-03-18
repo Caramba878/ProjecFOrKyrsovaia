@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
   	header("location: autorization.php");
   }
 
-	$sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '$_SESSION['phone']'";
+	$sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = ".$_SESSION['phone'].";
  	$k= $conn->query($sql_select2);
 foreach ($k as $row) {
 $phone = $row["Ncard"];
