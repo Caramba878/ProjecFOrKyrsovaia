@@ -68,7 +68,7 @@ if($pas1!=$pas2)
 		else{
 		$sql_insert1 = 
 "INSERT INTO Klient (Name, SecondName,Phone,Login) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql_insert1);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $secondName);
