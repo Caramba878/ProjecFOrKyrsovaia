@@ -4,9 +4,9 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
   $sql = "CREATE TABLE Card (
-	Ncard varchar(18) NOT NULL,
+	Ncard varchar(30) NOT NULL,
 	Balance INT NOT NULL,
-	Phone varchar(11) NOT NULL,
+	Phone varchar(30) NOT NULL,
 	PRIMARY KEY (Ncard)
 )";
     $conn->query($sql);
