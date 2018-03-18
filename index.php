@@ -5,10 +5,10 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     
     
-    $sql_select2 = "Select Ncard From Ncard Join Klient On Klient.Phone = Enter.Phone Where Phone = ".$_SESSION['phone'].";
+    $sql_select2 = "Select Ncard From Ncard Join Klient On Klient.Phone = Enter.Phone Where Phone = '$_SESSION['phone']'";
  	$k = $conn->query($sql_select2);
     foreach ($k as $row) {
-	$ncard = $row["Ncard"];
+	$ncard = $row['Ncard'];
 	}
     
     
