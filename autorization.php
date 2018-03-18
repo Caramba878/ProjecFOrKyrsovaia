@@ -43,10 +43,11 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	
 	if ($stmt->fetchColumn() > 0){
 		
-		 header('location: index.php');
 				
 			$sql_select1 = "Select Name, SecondName From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'";
  	$n = $conn->query($sql_select1);
+	
+		
 		
 		    foreach ($n as $row) {
 		session_start();
