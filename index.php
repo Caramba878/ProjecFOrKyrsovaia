@@ -3,13 +3,20 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    
+    
+    $sql_select2 = "Select Ncard From Ncard Join Klient On Klient.Phone = Enter.Phone Where Phone = ".$_SESSION['phone'].";
+ 	$k = $conn->query($sql_select1);
+    foreach ($k as $row) {
+	$ncard = $row["Ncard"];
+		}
+    
+    
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-
-
 
 if (mail("samoilenko-1998@mail.ru", "Заявка с сайта", "ФИО:".$fio.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
  {     echo "сообщение успешно отправлено"; 
@@ -131,7 +138,7 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option></option> 
+   <option><?php echo $ncard; ?></option> 
 </select> </font>
 
 
