@@ -2,16 +2,7 @@
 
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-    
-    
-    $sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '$_SESSION['phone']'";
- 	$k = $conn->query($sql_select2);
-    foreach ($k as $row) {
-	$ncard = $row['Ncard'];
-	}
-    
-    
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
@@ -138,7 +129,19 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option><?php echo $ncard; ?></option> 
+   <option><?php
+	   
+	     $sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone = '$_SESSION['phone']'";
+ 	$k = $conn->query($sql_select2);
+    foreach ($k as $row) {
+	$ncard = $row['Ncard'];
+	}
+	   
+	   
+	   
+	   
+	   
+	   echo $ncard; ?></option> 
 </select> </font>
 
 
