@@ -7,7 +7,7 @@ try {
 	Ncard varchar(18) NOT NULL,
 	Balance INT(30) NOT NULL,
 	Phone varchar(11) NOT NULL,
-	PRIMARY KEY (`Ncard`)
+	PRIMARY KEY (Ncard)
 )";
     $conn->query($sql);
 }
