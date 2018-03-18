@@ -135,7 +135,7 @@ body{background:#2c3338;}
 	}
 	   
 	   
-	   echo $_SESSION['phone']; ?></option> 
+	   echo $ncard; ?></option> 
 </select> </font>
 
 
