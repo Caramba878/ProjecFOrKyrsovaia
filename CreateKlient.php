@@ -4,11 +4,11 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
     $sql = "CREATE TABLE Klient (
-	Name varchar(30) NOT NULL,
-	SecondName varchar(30) NOT NULL,
-	Phone varchar(11) NOT NULL,
-	Login varchar(30) NOT NULL,
-	PRIMARY KEY (Phone)
+	id INT NOT NULL IDENTITY(1,1)
+	PRIMARY KEY (id),
+	Name varchar(30),
+	SecondName varchar(30),
+	Phone TEXT NOT NULL,
 )";
     $conn->query($sql);
 }
