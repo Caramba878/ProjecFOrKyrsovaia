@@ -56,7 +56,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		  $_SESSION['login'] = $log;
 			    $phone = $row["Phone"];
 		    }
-		 $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone ='$phone'";
+		 $sql_select2 = "Select Ncard From Card Join Klient On Card.Phone = Klient.Phone Where Phone ='$phone'";
  		$k = $conn->query($sql_select2);
     		    foreach ($k as $row1) {
 		 $_SESSION['ncard']= $row1['Ncard'];
