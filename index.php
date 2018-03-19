@@ -127,13 +127,7 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option><?php
-	   
-	   
-	   
-	 
-	   echo $ncard;
-	  ?></option> 
+   <option><?php echo  $_SESSION['ncard']; ?></option> 
 </select> </font>
 
 
