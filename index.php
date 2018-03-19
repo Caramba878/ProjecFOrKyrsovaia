@@ -21,15 +21,6 @@ if (isset($_GET['logout'])) {
 	
   }
 
-     $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = 89999999995";
- 	$k = $conn->query($sql_select2);
-    foreach ($k as $row) {
-	$ncard = $row['Ncard'];
-	
-	echo $ncard;
-	}
-
-
 
 ?>
 <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
