@@ -128,8 +128,8 @@ body{background:#2c3338;}
    <font color = "black">
   <select>
    <option><?php 
-	   
-	   $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone =".$_SESSION['phone'].";
+	   $e = $_SESSION['phone'];
+	   $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone =".$e.";
  	$k = $conn->query($sql_select2);
 	$p = $k->fetchAll();
 	   
