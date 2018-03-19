@@ -127,19 +127,8 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option><?php 
-	   $e = $_SESSION['phone'];
-	   $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone =".$e.";
- 	$k = $conn->query($sql_select2);
-	$p = $k->fetchAll();
-	   
-	   foreach($p as row1)
-	   {
-	   $phone= row1['Phone'];
-	   }
-	   
-	   
-	 echo   $phone;
+   <option><?php  
+
 	   ?></option> 
 </select> </font>
 
