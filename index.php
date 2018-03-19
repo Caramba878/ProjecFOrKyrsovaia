@@ -127,7 +127,19 @@ body{background:#2c3338;}
    <label>Ваша карта</label>
    <font color = "black">
   <select>
-   <option><?php echo  $_SESSION['phone']; ?></option> 
+   <option><?php 
+	   
+	   $sql_select2 = "Select Name, SecondName, Phone From Klient Join Enter On Klient.id = Enter.id Where Login =".$_SESSION['login'].";
+ 	$k = $conn->query($sql_select2);
+	   
+	   foreach($k as row1)
+	   {
+	   $name = row1['Name'];
+	   }
+	   
+	   
+	 echo    $name;
+	   ?></option> 
 </select> </font>
 
 
