@@ -130,13 +130,15 @@ body{background:#2c3338;}
 	   
 	   
 	   
-	      $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = 89999999994";
+	      $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = ".$_SESSION['phone'].";
  	$k = $conn->query($sql_select2);
     foreach ($k as $row) {
 	$ncard = $row['Ncard'];
+	
+	echo $ncard;
 	}
 	   
-	 echo $ncard; ?></option> 
+	  ?></option> 
 </select> </font>
 
 
