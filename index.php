@@ -129,16 +129,17 @@ body{background:#2c3338;}
   <select>
    <option><?php 
 	   
-	   $sql_select2 = "Select Name, SecondName, Phone From Klient Join Enter On Klient.id = Enter.id Where Login =".$_SESSION['login'].";
+	   $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone =".$_SESSION['phone'].";
  	$k = $conn->query($sql_select2);
+	$p = $k->fetchAll();
 	   
-	   foreach($k as row1)
+	   foreach($p as row1)
 	   {
-	   $name = row1['Name'];
+	   $phone= row1['Phone'];
 	   }
 	   
 	   
-	 echo    $name;
+	 echo   $phone;
 	   ?></option> 
 </select> </font>
 
