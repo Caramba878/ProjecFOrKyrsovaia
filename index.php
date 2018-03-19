@@ -18,7 +18,17 @@ if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['login']);
   	header("location: autorization.php");
+	
   }
+
+     $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = 89999999995";
+ 	$k = $conn->query($sql_select2);
+    foreach ($k as $row) {
+	$ncard = $row['Ncard'];
+	
+	echo $ncard;
+	}
+
 
 
 ?>
@@ -130,14 +140,8 @@ body{background:#2c3338;}
 	   
 	   
 	   
-	      $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = 89999999995";
- 	$k = $conn->query($sql_select2);
-    foreach ($k as $row) {
-	$ncard = $row['Ncard'];
-	
-	echo $ncard;
-	}
-	   
+	 
+	   echo $ncard;
 	  ?></option> 
 </select> </font>
 
