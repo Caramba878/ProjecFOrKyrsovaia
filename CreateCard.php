@@ -9,6 +9,9 @@ try {
 	Phone varchar(30) NOT NULL,
 	PRIMARY KEY (Ncard)
 )";
+	
+	
+$sql1 = "ALTER TABLE `Card` ADD CONSTRAINT `Card_fk0` FOREIGN KEY (`id`) REFERENCES `Klient`(`id`);"	
     $conn->query($sql);
 }
 catch (PDOException $e) {
