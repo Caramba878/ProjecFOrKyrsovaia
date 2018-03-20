@@ -5,10 +5,11 @@ try {
 	
   $sql = "CREATE TABLE Card (
   	id INT NOT NULL IDENTITY(1,1)
+	PRIMARY KEY (Ncard),
 	Ncard varchar(30) NOT NULL,
 	Balance INT NOT NULL,
-	Phone varchar(30) NOT NULL,
-	PRIMARY KEY (Ncard)
+	Phone varchar(30) NOT NULL
+	
 )";
 	
 	$sql1 = "ALTER TABLE Card ADD CONSTRAINT Card_fk0 FOREIGN KEY (id) REFERENCES Klient(id)";	
