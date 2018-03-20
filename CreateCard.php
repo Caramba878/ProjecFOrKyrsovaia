@@ -4,6 +4,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
   $sql = "CREATE TABLE Card (
+  	id INT NOT NULL IDENTITY(1,1)
 	Ncard varchar(30) NOT NULL,
 	Balance INT NOT NULL,
 	Phone varchar(30) NOT NULL,
