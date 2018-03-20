@@ -13,6 +13,7 @@ try {
 	
 $sql1 = "ALTER TABLE `Card` ADD CONSTRAINT `Card_fk0` FOREIGN KEY (`id`) REFERENCES `Klient`(`id`);"	
     $conn->query($sql);
+	 $conn->query($sql1);
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
