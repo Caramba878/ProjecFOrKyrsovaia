@@ -48,14 +48,20 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$sql_select1 = "Select Name, SecondName, Phone From Klient Join Enter On Klient.id = Enter.id Where Login = '$log'";
  	$n = $conn->query($sql_select1);
 		
+		
 				
 		    foreach ($n as $row) {
 		$_SESSION['name'] = $row["Name"];
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
-			    $_SESSION['phone'] = $row["Phone"];
+			    $p = $row["Phone"];
 		    }
 		 
+		$sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = '$p'";
+ 	$k = $conn->query($sql_select2);
+		foreach ($k as $row1) {
+			$_SESSION['ncard'] = $row1["Ncard"];
+		}
 		
 		
 				    
