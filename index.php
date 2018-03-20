@@ -128,7 +128,7 @@ body{background:#2c3338;}
    <font color = "black">
   <select>
    <option><?php  
-
+echo $_SESSION['ncard'];
 	   ?></option> 
 </select> </font>
 
