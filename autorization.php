@@ -55,21 +55,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
 			   $_SESSION['phone'] = $row["Phone"];	
-			    
-			    
-			    
-			    $sql_select2 = "Select Phone From Card Join Klient On Card.id = Klient.id Where Phone =?";
- 	$k = $conn->prepare($sql_select2);
-	$k->execute($_SESSION['name']);
-		$data = $k->fetchAll();
-		foreach ($data as $row1) {
-			$_SESSION['ncard'] = $row1["Ncard"];
-		}
-			    
-			    
-			    
-			    
-			    
+	    
 		    }
 		
 	
@@ -84,6 +70,26 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 	}
 }
 	else {echo "Ошибка";}
+
+
+  
+			    $sql_select2 = "Select * From Card Join Klient On Card.id = Klient.id";
+ 	$k = $conn->query($sql_select2);
+		$data = $k->fetchAll();
+		if(count($data) > 0) {
+
+    foreach($data as $registrant) {
+        echo "<tr><td>".$registrant['Ncard']."</td>";
+        echo "<td>".$registrant['Balance']."</td>";
+	     echo "<td>".$registrant['Phone']."</td>";
+	     echo "<td>".$registrant['Name']."</td>";
+	     echo "<td>".$registrant['SecondName']."</td>";
+	     echo "<td>".$registrant['Phone']."</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
 	
 	
 	
