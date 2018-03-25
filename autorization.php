@@ -73,26 +73,17 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 
 
   
-			    $sql_select2 = "Select * From Card Join Klient On Card.id = Klient.id";
+			    $sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone = 89999999997";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
 		if(count($data) > 0) {
 			echo "<br><h2>KLIENT + Card</h2>";
     echo "<table>";
-    echo "<tr><th>Ncard</th>";
-    echo "<th>Balance</th>";
-    echo "<th>Phone</th>";
-			    echo "<th>Name</th>";
-			    echo "<th>SecondName</th>";
-	 echo "<th>Phone</th></tr>";
+    echo "<tr><th>Ncard</th></tr>";
+
 
     foreach($data as $registrant) {
-        echo "<tr><td>".$registrant['Ncard']."</td>";
-        echo "<td>".$registrant['Balance']."</td>";
-	     echo "<td>".$registrant['Phone']."</td>";
-	     echo "<td>".$registrant['Name']."</td>";
-	     echo "<td>".$registrant['SecondName']."</td>";
-	     echo "<td>".$registrant['Phone']."</tr>";
+        echo "<tr><td>".$registrant['Ncard']."</td>";   
     }
     echo "</table>";
 } else {
