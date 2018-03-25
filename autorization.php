@@ -77,6 +77,14 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
 		if(count($data) > 0) {
+			echo "<br><h2>KLIENT + Card</h2>";
+    echo "<table>";
+    echo "<tr><th>Ncard</th>";
+    echo "<th>Balance</th>";
+    echo "<th>Phone</th>";
+			    echo "<th>Name</th>";
+			    echo "<th>SecondName</th>";
+	 echo "<th>Phone</th></tr>";
 
     foreach($data as $registrant) {
         echo "<tr><td>".$registrant['Ncard']."</td>";
