@@ -56,6 +56,16 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		  $_SESSION['login'] = $log;
 			   $_SESSION['phone'] = $row["Phone"];		    
 		    }
+		
+		$sql_select2 = "Select Ncard From Card Join Klient On Card.id = Klient.id Where Phone =?";
+ 	$k = $conn->prepare($sql_select2);
+	$k->execute($_SESSION['phone']);
+		$data = $stmt->fetchAll();
+		foreach ($data as $row1) {
+			$_SESSION['ncard'] = $row1["Ncard"];
+		}
+		
+		
 		 
 				    
   	  $_SESSION['success'] = "You are now logged in";
