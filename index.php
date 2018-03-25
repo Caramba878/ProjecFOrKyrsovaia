@@ -128,7 +128,16 @@ body{background:#2c3338;}
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
    <label>Ваша карта</label>
    <font color = "black">
-	<tr><td><strong><?php echo $_SESSION['ncard']; ?></strong></td></tr>   
+	<select>
+		<option>
+		
+		<?php
+			echo $_SESSION['ncard'];
+			?>
+		
+		</option>
+		
+		</select>
 	   
 	   
   </font>
