@@ -170,21 +170,8 @@ body{background:#2c3338;}
  </div>
  <div class="form-group">
  <button type="submit" class="btn btn-success" data-original-title="" title="">Отправить</button>
- </div>
- </form>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
-</div>
-
-</div><!-- /.main -->
-</div><!-- /.container -->
-
-
-
+	 
+	
 <?php
 try {
     $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
@@ -248,6 +235,25 @@ $reg = $stmt->fetchAll();
 
 
 ?>
+ 
+	 
+	 
+	 
+	 
+	 
+	 
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+
+</div><!-- /.main -->
+</div><!-- /.container -->
 
 
 
