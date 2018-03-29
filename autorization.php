@@ -81,7 +81,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
     echo "<table>";
     echo "<tr><th>Ncard</th></tr>";
     foreach($data as $registrant) {
-        echo "<tr><td>".$registrant['Ncard']."</td>";   
+        echo "<tr><td>".$registrant['Phone']."</td>";   
     }
     echo "</table>";
 } else {
