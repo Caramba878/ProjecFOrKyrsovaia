@@ -169,7 +169,7 @@ body{background:#2c3338;}
  </div>
  </div>
  <div class="form-group">
- <button type="submit" class="btn btn-success" data-original-title="" title="">Отправить</button>
+ <input type="submit" class="btn btn-success" data-original-title="" title="" value = "Отправить">
 	  </form>
 	 
 	
