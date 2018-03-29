@@ -55,7 +55,6 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
 			   $_SESSION['phone'] = $row["Phone"];	
-			    $p = $row["Phone"];
 		    }
 		
 	
