@@ -55,10 +55,20 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
 			   $_SESSION['phone'] = $row["Phone"];	
+			    $phone = $row["Phone"]
 	    
 		    }
 		
 	
+		
+		
+		  $sql_select2 = "Select Ncard From Card Where Phone = '$phone'";
+ 	$k = $conn->query($sql_select2);
+		$data = $k->fetchAll();
+    foreach($data as $registrant) {
+     $_SESSION['ncard'] = $registrant['Ncard'];  
+    }
+		
 		
 		
 		 
@@ -73,20 +83,8 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 
 
   
-			    $sql_select2 = "Select Ncard From Card Where Phone = '89999999990'";
- 	$k = $conn->query($sql_select2);
-		$data = $k->fetchAll();
-		if(count($data) > 0) {
-			echo "<br><h2>KLIENT + Card</h2>";
-    echo "<table>";
-    echo "<tr><th>Ncard</th></tr>";
-    foreach($data as $registrant) {
-        echo "<tr><td>".$registrant['Ncard']."</td>";   
-    }
-    echo "</table>";
-} else {
-    echo "<h3>No one is currently registered.</h3>";
-}
+
+
 	
 	
 	
