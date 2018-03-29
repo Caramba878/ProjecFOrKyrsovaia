@@ -128,11 +128,14 @@ body{background:#2c3338;}
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
   <tr><td class="active" id = "field">Ваша карта</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td><td><?php 
 	  $n = $_SESSION['ncard'];
+	   $balance;
 			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
     foreach($data as $registrant) {
-     echo $registrant['Balance'];  
+     echo $registrant['Balance']; 
+	     $balance = $registrant['Balance'];
+	   
     }     ?></td></tr>
 
  </table>
@@ -155,7 +158,7 @@ body{background:#2c3338;}
  </div>
   <div class="form-group">
  <label>Сумма</label>
- <input type="text" class="form-control rounded">
+ <input type="text" class="form-control rounded" name = "sum">
  </div>
  <div class="form-group">
  <label>E-mail адрес</label>
@@ -179,3 +182,37 @@ body{background:#2c3338;}
 
 </div><!-- /.main -->
 </div><!-- /.container -->
+
+
+
+<?php
+try {
+    $conn = new PDO("sqlsrv:server = tcp:vol2.database.windows.net,1433; Database = BD", "Volun", "Simpsons1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+if(isset($_POST["submit"])) {
+	$sum = $_POST['sum'];
+	
+
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+?>
+
+
+
+
