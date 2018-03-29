@@ -73,7 +73,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 
 
   
-			    $sql_select2 = "Select Phone From Card Where Ncard = '4276123456789100'";
+			    $sql_select2 = "Select Phone From Klient Where Name = 'Klient0'";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
 		if(count($data) > 0) {
