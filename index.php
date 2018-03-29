@@ -126,7 +126,7 @@ body{background:#2c3338;}
  <tbody>
  <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
-  <tr><td class="active" id = "field">Ваши карты</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td></tr>
+  <tr><td class="active" id = "field">Ваша карта</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td></tr>
 
  </table>
  </div>
