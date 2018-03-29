@@ -55,14 +55,13 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		$_SESSION['secondName'] = $row["SecondName"];
 		  $_SESSION['login'] = $log;
 			   $_SESSION['phone'] = $row["Phone"];	
-			    $phone = $row["Phone"]
-	    
+
 		    }
 		
 	
 		
 		
-		  $sql_select2 = "Select Ncard From Card Where Phone = '$phone'";
+		  $sql_select2 = "Select Ncard From Card Where Phone = ".$_SESSION['phone'].";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
     foreach($data as $registrant) {
