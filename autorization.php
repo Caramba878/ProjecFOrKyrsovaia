@@ -73,7 +73,7 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 
 
   
-			    $sql_select2 = "Select * From Card Join Klient On Card.Phone = Klient.Phone Where Name = 'AnatolY'";
+			    $sql_select2 = "Select Phone From Card FULL OUTER JOIN Klient On Card.Phone = Klient.Phone Where Name = 'AnatolY'";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
 		if(count($data) > 0) {
