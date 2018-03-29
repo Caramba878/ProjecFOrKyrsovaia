@@ -7,11 +7,11 @@ try {
 	for($i = 0;$i<=4;$i++)
 	{
 $sql_in = 
-"INSERT INTO Card (Ncard, Balance,Phone) 
+"INSERT INTO Klient (Name, SecondName,Phone) 
                    VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_in);
-    $stmt->bindValue(1, "427612345678910".$i);
-    $stmt->bindValue(2, 10000);
+    $stmt->bindValue(1, "Klient".$i);
+    $stmt->bindValue(2, "Klientovich".$i);
 	  $stmt->bindValue(3, "8999999999".$i);
     $stmt->execute();
 	}
