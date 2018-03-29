@@ -142,7 +142,7 @@ body{background:#2c3338;}
  </div>
  <div class="tab-pane fade" id="contact">
  <p></p>
- <form role="form">
+<form action="index.php" method="post">
   <div class="form-group">
  <label>Операция</label>
    <font color = "black">
@@ -170,6 +170,7 @@ body{background:#2c3338;}
  </div>
  <div class="form-group">
  <button type="submit" class="btn btn-success" data-original-title="" title="">Отправить</button>
+	  </form>
 	 
 	
 <?php
