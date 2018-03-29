@@ -17,13 +17,11 @@ $sql_in =
 		
 	$sql_inE = 
 "INSERT INTO Enter (Login,Password) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?)";
     $stmt = $conn->prepare($sql_in);
     $stmt->bindValue(1, "Login".$i);
     $stmt->bindValue(2, "Pas".$i);
     $stmt->execute();	
-		
-		
 		
 	}
     }
