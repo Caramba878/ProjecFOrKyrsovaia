@@ -123,9 +123,9 @@ body{background:#2c3338;}
  <h4>История профиля</h4>
  <table class="table table-th-block">
  <tbody>
- <tr><td id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
- <tr><tdid = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
-  <tr><td  id = "field">Ваша карта</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td><td><?php 
+ <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
+ <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
+  <tr><td class="active"  id = "field">Ваша карта</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td><td><?php 
 	  $n = $_SESSION['ncard'];
 	   $balance;
 			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
