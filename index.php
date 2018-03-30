@@ -120,7 +120,7 @@ body{background:#2c3338;}
  </ul>
  <div id="myTabContent" class="tab-content">
 <hr>
- <div class="tab-pane fade active in" id="detail">
+ <div>
  <h4>История профиля</h4>
  <table class="table table-th-block">
  <tbody>
