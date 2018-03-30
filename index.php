@@ -142,7 +142,7 @@ body{background:#2c3338;}
  </div>
  <div class="tab-pane fade" id="contact">
  <p></p>
-<form action="index.php" method="post">
+<form action="Operation.php" method="post">
   <div class="form-group">
  <label>Операция</label>
    <font color = "black">
