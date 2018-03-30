@@ -42,26 +42,7 @@
  	else
  	{
  		
- 		$balance1 = $balance - $sum;
- 		$sql_in = 
- "Update Card Set Balance = '$balance1' Where Ncard = '$n' ";
- 		$stmt = $conn->prepare($sql_in);
-     		$stmt->execute();
- 		
- 		
- 		$sql_select3 = "Select Balance From Card Where Ncard ='$card'";
-  	$k = $conn->query($sql_select3);
- 		$data = $k->fetchAll();
-     foreach($data as $registrant) {
- 	     $balance2 = $registrant['Balance'];	   
-     } 
- 		
- 		
- 	$balance3 =$balance2 +$sum;
- 		$sql_in = 
- "Update Card Set Balance = '$balance3' Where Ncard = '$card' ";
- 		$stmt = $conn->prepare($sql_in);
-     		$stmt->execute();
+ 	
  		
  		
  		echo "<h2>Operation is done</h2>";
