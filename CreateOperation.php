@@ -5,10 +5,11 @@ try {
 	
   $sql = "CREATE TABLE Operation (
   id INT NOT NULL IDENTITY(1,1)
+  PRIMARY KEY(id),
 	Ncard varchar(30) NOT NULL,
 	Sum INT NOT NULL,
 	Operation varchar(30) NOT NULL,
-  date DATE
+  	date DATE
 	
 )";
     $conn->query($sql);
