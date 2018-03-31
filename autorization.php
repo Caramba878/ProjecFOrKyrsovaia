@@ -81,8 +81,9 @@ $sql_select = "SELECT * FROM Enter where (Login = '$log' And Password = '$pass')
 		
 		
 	}
+	else {echo "<h3 style = 'color: white;'>This user doesn't exist</h3>";}
 }
-	else {echo "Ошибка";}
+	
 
 
   
