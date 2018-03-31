@@ -198,9 +198,9 @@ try {
  	$balance2;
 	$cards =  $_POST['cards'];
 	 $balance;
-			   
+	   
 	 
-	 $sql_select2 = "Select Balance From Card Where Ncard ='$cards'";
+	 $sql_select2 = "Select Balance From Card Where Ncard =$cards";
  	$k1 = $conn->query($sql_select2);
 		$data = $k1->fetchAll();
     foreach($data as $registrant) {
