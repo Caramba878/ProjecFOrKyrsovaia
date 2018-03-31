@@ -196,7 +196,7 @@ try {
  	$card = $_POST['card'];
 	$date = date("Y-m-d H:i:s");
  	$balance2;
-	$cards =  $_POST['cards'];
+	$cards = $_POST['cards'];
 	 $balance;
 	   
 	 
@@ -314,7 +314,7 @@ if(count($registrants) > 0) {
 	 
 	 if($operation == 3){
 	 
-	 echo "<h3 style = 'color: white;'> The Balance of card: ".$balance."</h3>"; 
+	 echo "<h3 style = 'color: white;'> The Balance of card: ".$cards."</h3>"; 
 }
  	
 	 
