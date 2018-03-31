@@ -279,7 +279,29 @@ try {
 }	
 }
 	 
-	 
+	 		if($operation == 1){
+				
+				$sql_select5 = "SELECT * FROM Operation Where Ncard = '$n'";
+$stmt = $conn->query($sql_select5);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) {
+    echo "<h2>People who are registered:</h2>";
+    echo "<table>";
+    echo "<tr><th>Ncard</th>";
+    echo "<th>Sum</th>";
+    echo "<th>Date</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['Ncard']."</td>";
+        echo "<td>".$registrant['Sum']."</td>";
+        echo "<td>".$registrant['date']."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<h3>No one is currently registered.</h3>";
+}
+				
+				
+}
 	 
 	 
 	 
