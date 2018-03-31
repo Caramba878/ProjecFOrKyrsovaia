@@ -196,6 +196,7 @@ try {
 	$operation = $_POST['operation'];
  	$sum = $_POST['sum'];
  	$card = $_POST['card'];
+	$date = date("Y-m-d");
  	$balance2;
 	
 	 if($operation == 2){
@@ -245,18 +246,27 @@ try {
 	
 				
 		$sql_in2 = 
-"INSERT INTO Operation (Ncard, Balance,Phone) 
-                   VALUES (?,?,?)";
-    $stmt = $conn->prepare($sql_in);
-    $stmt->bindValue(1, );
-    $stmt->bindValue(2, 10000);
-	  $stmt->bindValue(3, "8999999999".$i);
-    $stmt->execute();		
+"INSERT INTO Operation (Ncard, Sum,Operation,date) 
+                   VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($sql_in2);
+    $stmt->bindValue(1,$n);
+    $stmt->bindValue(2, "-".$sum);
+	  $stmt->bindValue(3, $operation);
+	 $stmt->bindValue(4, $date);
+    $stmt->execute();
 				
+			
+					$sql_in3 = 
+"INSERT INTO Operation (Ncard,Sum,Operation,date) 
+                   VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($sql_in3);
+    $stmt->bindValue(1,$card);
+    $stmt->bindValue(2, "+".$sum);
+	  $stmt->bindValue(3, $operation);
+	 $stmt->bindValue(4, $date);
+    $stmt->execute();
 				
-				
-				
- 		
+
  		
 		echo "<h3 style = 'color: green;'>Operation is done</h3>";
 				
@@ -267,7 +277,12 @@ try {
 }
 }	
 }	
- }
+}
+	 
+	 
+	 
+	 
+	 
  	
  }
  
