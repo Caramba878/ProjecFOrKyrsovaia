@@ -159,10 +159,6 @@ body{background:#2c3338;}
  <input type="text" class="form-control rounded" name = "sum">
  </div>
  <div class="form-group">
- <label>E-mail адрес</label>
- <input type="email" class="form-control rounded" placeholder="Ваш Е-майл">
- </div>
- <div class="form-group">
  <div class="checkbox">
  </div>
  </div>
