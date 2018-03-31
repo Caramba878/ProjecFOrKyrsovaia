@@ -246,24 +246,26 @@ try {
 	
 				
 		$sql_in2 = 
-"INSERT INTO Operation (Ncard, Sum,Operation,date) 
-                   VALUES (?,?,?,?)";
+"INSERT INTO Operation (Ncard,Ncard2, Sum,Operation,date) 
+                   VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql_in2);
     $stmt->bindValue(1,$n);
-    $stmt->bindValue(2, "-".$sum);
-	  $stmt->bindValue(3, $operation);
-	 $stmt->bindValue(4, $date);
+	$stmt->bindValue(2,$card);
+    $stmt->bindValue(3, "-".$sum);
+	  $stmt->bindValue(4, $operation);
+	 $stmt->bindValue(5, $date);
     $stmt->execute();
 				
 			
 					$sql_in3 = 
-"INSERT INTO Operation (Ncard,Sum,Operation,date) 
-                   VALUES (?,?,?,?)";
+"INSERT INTO Operation (Ncard,Ncard2,Sum,Operation,date) 
+                   VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql_in3);
     $stmt->bindValue(1,$card);
-    $stmt->bindValue(2, "+".$sum);
-	  $stmt->bindValue(3, $operation);
-	 $stmt->bindValue(4, $date);
+	$stmt->bindValue(2,$n);
+    $stmt->bindValue(3, "+".$sum);
+	  $stmt->bindValue(4, $operation);
+	 $stmt->bindValue(5, $date);
     $stmt->execute();
 				
 
@@ -291,7 +293,7 @@ if(count($registrants) > 0) {
     echo "<th style = ' padding: 20px; color: white;'><h3>Sum</h3></th>";
     echo "<th style = ' padding: 20px; color: white; '><h3>Date</h3></th></tr>";
     foreach($registrants as $registrant) {
-        echo "<tr><td><h5>".$registrant['Ncard']."</h5></td>";
+        echo "<tr><td><h5>".$registrant['Ncard2']."</h5></td>";
         echo "<td><h5 style = 'text-align: center;'>".$registrant['Sum']."</h3></td>";
         echo "<td><h5 style = 'text-align: center;'>".$registrant['date']."</h3></td></tr>";
     }
