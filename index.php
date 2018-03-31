@@ -207,6 +207,11 @@ try {
      }
  	else
 	{
+		if($sum<0)
+		{
+			echo "Number must be higher than 0";
+		}
+		else{
  		$balance1 = $balance - $sum;
 		$sql_in = 
  "Update Card Set Balance = '$balance1' Where Ncard = '$n' ";
@@ -234,7 +239,7 @@ try {
 
 
 		
- 	
+}	
  }
  	
  }
