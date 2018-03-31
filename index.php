@@ -131,8 +131,7 @@ body{background:#2c3338;}
 			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
  	$k = $conn->query($sql_select2);
 		$data = $k->fetchAll();
-    foreach($data as $registrant) {
-     echo $registrant['Balance']; 
+    foreach($data as $registrant) { 
 	     $balance = $registrant['Balance'];
 	   
     }     ?></td></tr>
@@ -148,7 +147,7 @@ body{background:#2c3338;}
   <select name="operation">
    <option value = "1">Выписка</option>
   <option value = "2">Перевести деньги</option>
-     <option>Баланс</option>
+     <option value = "3">Баланс</option>
 </select> </font>
 </div>
  <div class="form-group">
@@ -274,15 +273,7 @@ try {
 				
 				
 				
-				
- 	// Сообщение
-$message = "Line 1\r\nLine 2\r\nLine 3";
 
-// На случай если какая-то строка письма длиннее 70 символов мы используем wordwrap()
-$message = wordwrap($message, 70, "\r\n");
-
-// Отправляем
-mail('samoilenko-1998@mail.ru', 'My Subject', $message);	
 
 }
 }	
@@ -312,9 +303,11 @@ if(count($registrants) > 0) {
 				
 				
 }
+	
 	 
+if($operation == 3){
 	 
-	 
+	 echo "Balance of card: '$balance'"; 
  	
  }
  
