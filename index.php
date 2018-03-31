@@ -288,8 +288,8 @@ if(count($registrants) > 0) {
     echo "<h2>People who are registered:</h2>";
     echo "<table>";
     echo "<tr><th>Ncard</th>";
-    echo "<th style = 'margin-right:50px; '>Sum</th>";
-    echo "<th style = 'margin-right:50px; '>Date</th></tr>";
+    echo "<th style = ' padding: 40px; '>Sum</th>";
+    echo "<th style = ' padding: 40px; '>Date</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td><h5>".$registrant['Ncard']."</h3></td>";
         echo "<td><h5>".$registrant['Sum']."</h3></td>";
