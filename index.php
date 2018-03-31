@@ -200,7 +200,7 @@ try {
  	$balance2;
 	
  	
- 	$sql_select = "SELECT * FROM Card WHERE Ncard LIKE '%".$card."%'";
+ 	$sql_select = "SELECT * FROM Card WHERE Ncard Where Ncard ='$card'";
  $stmt = $conn->query($sql_select);
  $reg = $stmt->fetchAll(); 
  
