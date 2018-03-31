@@ -212,6 +212,13 @@ try {
 			echo "Number must be higher than 0";
 		}
 		else{
+			if($sum>$balance)
+			{
+				echo "Not enough money in your account";
+			}
+			else
+			{
+
  		$balance1 = $balance - $sum;
 		$sql_in = 
  "Update Card Set Balance = '$balance1' Where Ncard = '$n' ";
@@ -237,8 +244,8 @@ try {
 		echo "<h2>Operation is done</h2>";
  		
 
-
-		
+			}
+	
 }	
  }
  	
