@@ -134,9 +134,7 @@ body{background:#2c3338;}
  $stmt = $conn->query($sql_select4);
  $reg2 = $stmt->fetchAll(); 
 	 foreach($reg2 as $registrant) {
-		 $i = 0;
-		 for($i;$i<count($reg2);$i++)
- 	  echo "<option value = '$i'>".$registrant['Ncard']."</option>";	   
+ 	  echo "<option value = 'a'.$reg2.'>".$registrant['Ncard']."</option>";	   
      } 
  	
 	  
