@@ -191,7 +191,7 @@ try {
 	$operation = $_POST['operation'];
  	$sum = $_POST['sum'];
  	$card = $_POST['card'];
-	$date = date("Y-m-d");
+	$date = date("Y-m-d H:i:s");
  	$balance2;
 	
 	 if($operation == 2){
