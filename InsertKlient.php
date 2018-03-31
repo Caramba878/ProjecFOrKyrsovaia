@@ -4,7 +4,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 	
-	for($i = 0;$i<=4;$i++)
+	for($i = 5;$i<=9;$i++)
 	{
 $sql_in = 
 "INSERT INTO Klient (Name, SecondName,Phone) 
@@ -17,7 +17,7 @@ $sql_in =
 	
 	}
 	
-	for($i = 0;$i<=4;$i++)
+	for($i = 5;$i<=9;$i++)
 	{
 	$sql_inE = 
 "INSERT INTO Enter (Login,Password) 
