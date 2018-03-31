@@ -125,7 +125,8 @@ body{background:#2c3338;}
  <tbody>
  <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
-  <tr><td class="active"  id = "field">Ваша карта</td><td><font color ='black'><select name = "cards"><?php 
+	 <form action="index.php" method="post">
+  <tr><td class="active"  id = "field">Ваша карта</td><td><font color ="black"><select name = "cards"><?php 
 	  $phone = $_SESSION['phone'];
 	  $i=0;
 	  
@@ -148,7 +149,6 @@ body{background:#2c3338;}
  </div>
  <div class="" id="contact">
  <p></p>
-<form action="index.php" method="post">
   <div class="form-group">
  <label>Операция</label>
    <font color = "black">
@@ -314,7 +314,7 @@ if(count($registrants) > 0) {
 	 
 	 if($operation == 3){
 	 
-	 echo "<h3 style = 'color: white;'> The Balance of card: '$operation'</h3>"; 
+	 echo "<h3 style = 'color: white;'> The Balance of card: ".$balance."</h3>"; 
 }
  	
 	 
