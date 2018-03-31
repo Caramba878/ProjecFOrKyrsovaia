@@ -210,8 +210,8 @@ try {
 			   
 	 
 	 $sql_select2 = "Select Balance From Card Where Ncard ='$cards'";
- 	$k = $conn->query($sql_select2);
-		$data = $k->fetchAll();
+ 	$k1 = $conn->query($sql_select2);
+		$data = $k1->fetchAll();
     foreach($data as $registrant) {
 	     $balance = $registrant['Balance'];	   
     }  
@@ -242,7 +242,7 @@ try {
 
  		$balance1 = $balance - $sum;
 		$sql_in = 
- "Update Card Set Balance = '$balance1' Where Ncard = '$cards' ";
+ "Update Card Set Balance = '$balance1' Where Ncard = '$cards'";
  		$stmt = $conn->prepare($sql_in);
      		$stmt->execute();
  		
