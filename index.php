@@ -287,7 +287,7 @@ $registrants = $stmt->fetchAll();
 if(count($registrants) > 0) {
     echo "<h2>Выписка операций</h2>";
     echo "<table>";
-    echo "<tr><th><h3>Ncard</h3></th>";
+    echo "<tr><th style ='color: white;'><h3>Ncard</h3></th>";
     echo "<th style = ' padding: 20px; color: white;'><h3>Sum</h3></th>";
     echo "<th style = ' padding: 20px; color: white; '><h3>Date</h3></th></tr>";
     foreach($registrants as $registrant) {
