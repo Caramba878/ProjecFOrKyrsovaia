@@ -168,13 +168,13 @@ body{background:#2c3338;}
  </div>
  </div>
  <div class="form-group">
- <input type="submit" class="btn btn-success" data-original-title="" title="" value = "Отправить">
+ <input name="myActionName" type="submit" class="btn btn-success" data-original-title="" title="" value = "Отправить">
 	  </form>
 	 
 	
 <?php
  
- if(isset($_POST["submit"])) {
+ if(isset($_POST["myActionName"])) {
  	
      echo "<h2>This Ncard doesn't exist</h2>";
      
