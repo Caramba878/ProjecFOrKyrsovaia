@@ -203,18 +203,18 @@ try {
  $reg = $stmt->fetchAll(); 
  
  	if(count($reg) == 0) {
-     echo "<h3>This Ncard doesn't exist</h3>";
+     echo "<h3 style = 'color: red;'>This Ncard doesn't exist</h3>";
      }
  	else
 	{
 		if($sum<0)
 		{
-			echo "<h3>Number must be higher than 0</h3>";
+			echo "<h3 style = 'color: red;'>Number must be higher than 0</h3>";
 		}
 		else{
 			if($sum>$balance)
 			{
-				echo "<h3>Not enough money in your account</h3>";
+				echo "<h3 style = 'color: red;'>Not enough money in your account</h3>";
 			}
 			else
 			{
@@ -241,7 +241,7 @@ try {
     		$stmt->execute();
  		
  		
-		echo "<h3>Operation is done</h3>";
+		echo "<h3 style = 'color: green;'>Operation is done</h3>";
  		
 
 			}
