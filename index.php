@@ -195,22 +195,27 @@ try {
      print("Error connecting to SQL Server.");
      die(print_r($e));
  }
- $n = $_SESSION['ncard'];
-	   $balance;
-			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
- 	$k = $conn->query($sql_select2);
-		$data = $k->fetchAll();
-    foreach($data as $registrant) {
-	     $balance = $registrant['Balance'];	   
-    }  
+
  
  if(isset($_POST["myActionName"])) {
+	 
+	 
 	$operation = $_POST['operation'];
  	$sum = $_POST['sum'];
  	$card = $_POST['card'];
 	$date = date("Y-m-d H:i:s");
  	$balance2;
-	 $cards =  $_POST['cards'];
+	$cards =  $_POST['cards'];
+	 $balance;
+			   
+	 
+	 $sql_select2 = "Select Balance From Card Where Ncard ='$cards'";
+ 	$k = $conn->query($sql_select2);
+		$data = $k->fetchAll();
+    foreach($data as $registrant) {
+	     $balance = $registrant['Balance'];	   
+    }  
+	 
 	
 	 if($operation == 2){
  	
@@ -237,7 +242,7 @@ try {
 
  		$balance1 = $balance - $sum;
 		$sql_in = 
- "Update Card Set Balance = '$balance1' Where Ncard = '$n' ";
+ "Update Card Set Balance = '$balance1' Where Ncard = '$cards' ";
  		$stmt = $conn->prepare($sql_in);
      		$stmt->execute();
  		
@@ -262,7 +267,7 @@ try {
 "INSERT INTO Operation (Ncard,Ncard2, Sum,Operation,date) 
                    VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql_in2);
-    $stmt->bindValue(1,$n);
+    $stmt->bindValue(1,$cards);
 	$stmt->bindValue(2,$card);
     $stmt->bindValue(3, "-".$sum);
 	  $stmt->bindValue(4, $operation);
@@ -275,7 +280,7 @@ try {
                    VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql_in3);
     $stmt->bindValue(1,$card);
-	$stmt->bindValue(2,$n);
+	$stmt->bindValue(2,$cards);
     $stmt->bindValue(3, "+".$sum);
 	  $stmt->bindValue(4, $operation);
 	 $stmt->bindValue(5, $date);
@@ -296,7 +301,7 @@ try {
 	 
 	 		if($operation == 1){
 				
-				$sql_select5 = "SELECT * FROM Operation Where Ncard = '$n'";
+				$sql_select5 = "SELECT * FROM Operation Where Ncard = '$cards'";
 $stmt = $conn->query($sql_select5);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
