@@ -200,7 +200,7 @@ try {
 	 $balance;
 	   
 	 
-	 $sql_select2 = "Select Balance From Card Where Ncard ='$cards'";
+	 $sql_select2 = "Select Balance From Card Where Ncard ='4276123456789100'";
  	$k1 = $conn->query($sql_select2);
 		$data = $k1->fetchAll();
     foreach($data as $registrant) {
