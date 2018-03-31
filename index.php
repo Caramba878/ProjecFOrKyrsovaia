@@ -125,7 +125,7 @@ body{background:#2c3338;}
  <tbody>
  <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
-  <tr><td class="active"  id = "field">Ваша карта</td><td><font color ='black'><select><?php 
+  <tr><td class="active"  id = "field">Ваша карта</td><td><font color ='black'><select name = "cards"><?php 
 	  $phone = $_SESSION['phone'];
 	  $i=0;
 	  
@@ -134,8 +134,8 @@ body{background:#2c3338;}
  $stmt = $conn->query($sql_select4);
  $reg2 = $stmt->fetchAll(); 
 	 foreach($reg2 as $registrant) {
-		 $i++;
- 	  echo "<option value = 'a$i'>".$registrant['Ncard']."</option>";	   
+		 $i = $registrant['Ncard'];
+ 	  echo "<option value = '$i'>".$registrant['Ncard']."</option>";	   
      } 
  	
 	  
@@ -210,6 +210,7 @@ try {
  	$card = $_POST['card'];
 	$date = date("Y-m-d H:i:s");
  	$balance2;
+	 $cards =  $_POST['cards'];
 	
 	 if($operation == 2){
  	
