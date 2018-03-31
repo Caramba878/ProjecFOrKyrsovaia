@@ -152,7 +152,7 @@ body{background:#2c3338;}
 </div>
  <div class="form-group">
  <label>Карта получателя</label>
- <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100." name ="card">
+ <input type="text" class="form-control rounded" placeholder="4276 1234 5678 9100." name ="card" pattern = "[1-9]{4}\s[1-9]{4}\s[1-9]{4}\s[1-9]{4}\s[1-9]{4}">
  </div>
   <div class="form-group">
  <label>Сумма</label>
