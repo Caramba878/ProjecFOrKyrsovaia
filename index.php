@@ -125,7 +125,23 @@ body{background:#2c3338;}
  <tbody>
  <tr><td class="active" id = "field">Имя</td><td><strong><?php echo $_SESSION['name']; ?></strong> </td></tr>
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
-  <tr><td class="active"  id = "field">Ваша карта</td><td><strong><?php echo $_SESSION['ncard']; ?></strong> </td><td><?php 
+  <tr><td class="active"  id = "field">Ваша карта</td><td><strong><select><?php 
+	  $phone = $_SESSION['phone'];
+	  
+	  
+	  
+	  $sql_select4 = "SELECT Ncard FROM Card WHERE Phone ='$phone'";
+ $stmt = $conn->query($sql_select4);
+ $reg2 = $stmt->fetchAll(); 
+	 foreach($reg2 as $registrant) {
+ 	  echo "<option>'$registrant['Ncard']'</option>";	   
+     } 
+ 	
+	  
+	  
+	  
+	  
+	  ?></select></strong> </td><td><?php 
 	  $n = $_SESSION['ncard'];
 	   $balance;
 			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
