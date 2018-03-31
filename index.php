@@ -287,9 +287,9 @@ $registrants = $stmt->fetchAll();
 if(count($registrants) > 0) {
     echo "<h2>Выписка операций</h2>";
     echo "<table>";
-    echo "<tr><th>Ncard</th>";
-    echo "<th style = ' padding: 40px; '>Sum</th>";
-    echo "<th style = ' padding: 40px; '>Date</th></tr>";
+    echo "<tr><th><h3>Ncard</h3></th>";
+    echo "<th style = ' padding: 40px; '><h3>Sum</h3></th>";
+    echo "<th style = ' padding: 40px; '><h3>Date</h3></th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td><h5>".$registrant['Ncard']."</h3></td>";
         echo "<td><h5 style = 'text-align: center;'>".$registrant['Sum']."</h3></td>";
