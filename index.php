@@ -300,7 +300,15 @@ if(count($registrants) > 0) {
 } else {
     echo "<h3>No one is currently registered.</h3>";
 }								
-}	 
+}
+	 
+	 if($operation == 3){
+	 
+	 echo "<h3 style = 'color: white;'>Balance of card: '$balance'</h3>"; 
+}
+ 	
+	 
+	 
 }
  
  ?>
