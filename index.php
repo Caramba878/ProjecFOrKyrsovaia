@@ -292,8 +292,8 @@ if(count($registrants) > 0) {
     echo "<th style = ' padding: 40px; '>Date</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td><h5>".$registrant['Ncard']."</h3></td>";
-        echo "<td><h5>".$registrant['Sum']."</h3></td>";
-        echo "<td><h5>".$registrant['date']."</h3></td></tr>";
+        echo "<td><h5 style = 'text-align: center;'>".$registrant['Sum']."</h3></td>";
+        echo "<td><h5 style = 'text-align: center;'>".$registrant['date']."</h3></td></tr>";
     }
     echo "</table>";
 } else {
