@@ -12,7 +12,7 @@ $sql_in =
 "INSERT INTO Card (Ncard, Balance,Phone) 
                    VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_in);
-    $stmt->bindValue(1, "42761234567891".$i+10);
+    $stmt->bindValue(1, "42761234567891".$i+21);
     $stmt->bindValue(2, 10000);
 	  $stmt->bindValue(3, "8999999999".$i);
     $stmt->execute();
