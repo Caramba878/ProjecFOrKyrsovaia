@@ -142,16 +142,7 @@ body{background:#2c3338;}
 	  
 	  
 	  
-	  ?></select></font> </td><td><?php 
-	  $n = $_SESSION['ncard'];
-	   $balance;
-			     $sql_select2 = "Select Balance From Card Where Ncard ='$n'";
- 	$k = $conn->query($sql_select2);
-		$data = $k->fetchAll();
-    foreach($data as $registrant) { 
-	     $balance = $registrant['Balance'];
-	   
-    }     ?></td></tr>
+	  ?></select></font> </td></tr>
 
  </table>
  </div>
