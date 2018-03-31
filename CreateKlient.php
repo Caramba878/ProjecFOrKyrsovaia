@@ -4,7 +4,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
     $sql = "CREATE TABLE Klient (
-	id INT NOT NULL IDENTITY(1,1) FOREIGN KEY REFERENCES Card(id)
+	id INT NOT NULL IDENTITY(1,1)
 	PRIMARY KEY (id),
 	Name varchar(30),
 	SecondName varchar(30),
