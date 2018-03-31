@@ -198,7 +198,7 @@ try {
  	$balance2;
 	
  	
- 	$sql_select = "SELECT * FROM Card WHERE Ncard Where Ncard ='$card'";
+ 	$sql_select = "SELECT * FROM Card WHERE Ncard ='$card'";
  $stmt = $conn->query($sql_select);
  $reg = $stmt->fetchAll(); 
  
