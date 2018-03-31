@@ -291,9 +291,9 @@ if(count($registrants) > 0) {
     echo "<th>Sum</th>";
     echo "<th>Date</th></tr>";
     foreach($registrants as $registrant) {
-        echo "<tr><td>".$registrant['Ncard']."</td>";
-        echo "<td>".$registrant['Sum']."</td>";
-        echo "<td>".$registrant['date']."</td></tr>";
+        echo "<tr><td><h3>".$registrant['Ncard']."</h3></td>";
+        echo "<td><h3>".$registrant['Sum']."</h3></td>";
+        echo "<td><h3>".$registrant['date']."</h3></td></tr>";
     }
     echo "</table>";
 } else {
