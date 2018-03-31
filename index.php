@@ -127,14 +127,15 @@ body{background:#2c3338;}
  <tr><td class="active" id = "field">Фамилия</td><td> <?php echo $_SESSION['secondName']; ?></td></tr>
   <tr><td class="active"  id = "field">Ваша карта</td><td><font color ='black'><select><?php 
 	  $phone = $_SESSION['phone'];
-	  
+	  $i=0;
 	  
 	  
 	  $sql_select4 = "SELECT Ncard FROM Card WHERE Phone ='$phone'";
  $stmt = $conn->query($sql_select4);
  $reg2 = $stmt->fetchAll(); 
 	 foreach($reg2 as $registrant) {
- 	  echo "<option value = 'for($i=0;$i<count($reg2);$i++){$i;}'>".$registrant['Ncard']."</option>";	   
+		 $i++;
+ 	  echo "<option value = '$i'>".$registrant['Ncard']."</option>";	   
      } 
  	
 	  
