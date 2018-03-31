@@ -145,9 +145,9 @@ body{background:#2c3338;}
   <div class="form-group">
  <label>Операция</label>
    <font color = "black">
-  <select>
-   <option>Выписка</option>
-  <option>Перевести деньги</option>
+  <select name="operation">
+   <option value = "1">Выписка</option>
+  <option value = "2">Перевести деньги</option>
      <option>Баланс</option>
 </select> </font>
 </div>
@@ -193,10 +193,12 @@ try {
     }  
  
  if(isset($_POST["myActionName"])) {
+	$operation = $_POST['operation'];
  	$sum = $_POST['sum'];
  	$card = $_POST['card'];
  	$balance2;
 	
+	 if($operation == 2){
  	
  	$sql_select = "SELECT * FROM Card WHERE Ncard ='$card'";
  $stmt = $conn->query($sql_select);
@@ -239,13 +241,31 @@ try {
  "Update Card Set Balance = '$balance3' Where Ncard = '$card' ";
 		$stmt = $conn->prepare($sql_in);
     		$stmt->execute();
+				
+	
+				
+		$sql_in2 = 
+"INSERT INTO Operation (Ncard, Balance,Phone) 
+                   VALUES (?,?,?)";
+    $stmt = $conn->prepare($sql_in);
+    $stmt->bindValue(1, );
+    $stmt->bindValue(2, 10000);
+	  $stmt->bindValue(3, "8999999999".$i);
+    $stmt->execute();		
+				
+				
+				
+				
  		
  		
 		echo "<h3 style = 'color: green;'>Operation is done</h3>";
+				
+				
+				
  		
 
-			}
-	
+}
+}	
 }	
  }
  	
