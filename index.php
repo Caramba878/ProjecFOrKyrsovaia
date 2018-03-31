@@ -314,7 +314,7 @@ if(count($registrants) > 0) {
 	 
 	 if($operation == 3){
 	 
-	 echo "<h3 style = 'color: white;'> The Balance of card: '$cards'</h3>"; 
+	 echo "<h3 style = 'color: white;'> The Balance of card: '$operation'</h3>"; 
 }
  	
 	 
