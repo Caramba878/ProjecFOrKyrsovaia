@@ -135,7 +135,8 @@ body{background:#2c3338;}
  $reg2 = $stmt->fetchAll(); 
 	 foreach($reg2 as $registrant) {
 		 $i = 0;
- 	  echo "<option value = '.$i+1.'>".$registrant['Ncard']."</option>";	   
+		 for($i;$i<count($reg2);$i++)
+ 	  echo "<option value = '$i'>".$registrant['Ncard']."</option>";	   
      } 
  	
 	  
