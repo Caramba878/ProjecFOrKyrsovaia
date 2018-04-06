@@ -95,66 +95,6 @@ catch(Exception $e) {
     die(var_dump($e));
 }
 }
-$sql_select = "SELECT * FROM Enter";
-$stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
-if(count($registrants) > 0) {
-    echo "<h2>ENTER</h2>";
-    echo "<table>";
-    echo "<tr><th>Login</th>";
-    echo "<th>Password</th>";
-    foreach($registrants as $registrant) {
-        echo "<tr><td>".$registrant['Login']."</td>";
-        echo "<td>".$registrant['Password']."</td>";
-    }
-    echo "</table>";
-} else {
-    echo "<h3>No one is currently registered.</h3>";
-}
-$sql_select = "SELECT * FROM Klient";
-$stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
-if(count($registrants) > 0) {
-    echo "<br><h2>KLIENT</h2>";
-    echo "<table>";
-    echo "<tr><th>Name</th>";
-    echo "<th>SecondName</th>";
-    echo "<th>Number</th>";
-	 echo "<th>Login</th></tr>";
-    foreach($registrants as $registrant) {
-        echo "<tr><td>".$registrant['Name']."</td>";
-        echo "<td>".$registrant['SecondName']."</td>";
-	      echo "<td>".$registrant['Phone']."</td>";
-	    echo "<td>".$registrant['Login']."</td>";
-    }
-    echo "</table>";
-} else {
-    echo "<h3>No one is currently registered.</h3>";
-}
-
-
-
-
-$sql_select = "SELECT * FROM Card";
-$stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll(); 
-if(count($registrants) > 0) {
-    echo "<br><h2>Card</h2>";
-    echo "<table>";
-    echo "<tr><th>Ncard</th>";
-    echo "<th>Balance</th>";
-    echo "<th>Phone</th></tr>";
-    foreach($registrants as $registrant) {
-        echo "<tr><td>".$registrant['Ncard']."</td>";
-        echo "<td>".$registrant['Balance']."</td>";
-	      echo "<td>".$registrant['Phone']."</td>";
-    }
-    echo "</table>";
-} else {
-    echo "<h3>No one is currently registered.</h3>";
-}
-
-
 
 
 
