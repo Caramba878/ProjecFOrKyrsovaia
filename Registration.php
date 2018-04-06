@@ -85,9 +85,7 @@ if($pas1!=$pas2)
 
     $stmt->execute();
 		
-	$_SESSION['login'] = $login;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');	
+  	header('location: autorization.php');	
 		
 }
 }
